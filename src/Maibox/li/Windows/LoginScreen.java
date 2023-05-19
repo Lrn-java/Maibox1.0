@@ -114,7 +114,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
     }
-
     /**
      * 少量组件面板中按钮监听效果的重写
      */
@@ -139,41 +138,48 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
     }
-
     /**
      * 预览按钮,新窗口按钮按钮重写
      */
     @Override
     public void mainInterface() {
         MainInterfaceProperties.super.mainInterface();
+        /*
+         * 预览按钮重写
+         */
         Preview_Button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Preview_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
                 super.mouseEntered(e);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Preview_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
                 super.mouseExited(e);
             }
         });
 
+        /*
+         * 新窗口打开按钮重写
+         */
         NewWindow_Button.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mouseEntered(MouseEvent e) {
                 NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                NewWindow_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
                 super.mouseEntered(e);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                NewWindow_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
                 super.mouseExited(e);
             }
         });
-
     }
 }
