@@ -11,7 +11,6 @@ public class UserNameMessage extends Exception{
         super(user);
         this.user = user;
     }
-
     /**
      * 捕获异常时，弹出对话框
      */

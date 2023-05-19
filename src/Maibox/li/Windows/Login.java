@@ -33,7 +33,6 @@ public interface Login {
         J_FRAME.setResizable(false);
         J_FRAME.setVisible(true);
 
-
         J_LABEL1.setBounds(205, 150, 150, 80);
         J_LABEL1.setFont(new Font("方正舒体",Font.BOLD, 18));
         J_LABEL1.setForeground(Color.BLACK);
