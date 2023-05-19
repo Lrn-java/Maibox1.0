@@ -5,9 +5,9 @@ import javax.swing.*;
 /**
  *异常处理类,用于处理注册时用户输入有误信息
  */
-public class UserNameMessage extends Exception{
+public class UserNameMessageError extends Exception{
     private final String user;
-    public UserNameMessage(String user){
+    public UserNameMessageError(String user){
         super(user);
         this.user = user;
     }

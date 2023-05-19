@@ -16,6 +16,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
 
     public static final String USER = null;
     public static final String PASSWORD = null;
+
     private static final int[] LENGTH = new int[]{0,6,16};
     public LoginScreen() {
         this.setJframe();
@@ -106,8 +107,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                                 "用户名长度必须为 1-3 个字符,密码长度必须介于 6 到 16 个字符之间,两次密码必须一致!";
                         R_J_PASSWORD_FIELD1.setText("");
                         R_J_PASSWORD_FIELD2.setText("");
-                        throw new UserNameMessage(errorMessage);
-                    } catch (UserNameMessage ex) {
+                        throw new UserNameMessageError(errorMessage);
+                    } catch (UserNameMessageError ex) {
                         ex.printStackTrace();
                     }
                 }
@@ -117,27 +118,62 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
     /**
      * 少量组件面板中按钮监听效果的重写
      */
+
     @Override
     public void menuBarOne() {
         MainInterfaceProperties.super.menuBarOne();
-        M_J_BUTTON_ONE.addMouseListener(new MouseAdapter() {
+        WriteAMessage_Button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
+                WriteAMessage_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                WriteAMessage_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
                 super.mouseEntered(e);
-                M_J_BUTTON_ONE.setForeground(Color.black);
-                M_J_BUTTON_TWO.setForeground(Color.black);
-                M_J_BUTTON_THREE.setForeground(Color.black);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
+                WriteAMessage_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                WriteAMessage_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
                 super.mouseExited(e);
-                M_J_BUTTON_ONE.setForeground(Color.black);
-                M_J_BUTTON_TWO.setForeground(Color.black);
-                M_J_BUTTON_THREE.setForeground(Color.black);
             }
         });
+
+        Inbox_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Inbox_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Inbox_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Inbox_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Inbox_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
+                super.mouseExited(e);
+            }
+        });
+
+        Contacts_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Contacts_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Contacts_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Contacts_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Contacts_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
+                super.mouseExited(e);
+            }
+        });
+
     }
+
+
+
     /**
      * 预览按钮,新窗口按钮按钮重写
      */
@@ -171,13 +207,13 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             @Override
             public void mouseEntered(MouseEvent e) {
                 NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                NewWindow_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
+                NewWindow_Button.setFont(new Font("微软雅黑",Font.BOLD,15));
                 super.mouseEntered(e);
             }
             @Override
             public void mouseExited(MouseEvent e) {
                 NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                NewWindow_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
+                NewWindow_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
                 super.mouseExited(e);
             }
         });

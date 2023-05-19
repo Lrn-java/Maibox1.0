@@ -3,7 +3,6 @@ package Maibox.li.Run;
 import Maibox.li.Windows.MainInterface;
 
 import static java.lang.System.out;
-
 public class Run {
 /**
  * @author Lrn
