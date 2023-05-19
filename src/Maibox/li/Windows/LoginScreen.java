@@ -181,5 +181,65 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 super.mouseExited(e);
             }
         });
+
+        /*
+         * 抄送按钮重写
+         */
+        carbonCopy_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                carbonCopy_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                carbonCopy_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
+                carbonCopy_Button.setToolTipText("什么是抄送:\n同时将这一封邮件发送给其他联系人。");
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                carbonCopy_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                carbonCopy_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
+                super.mouseExited(e);
+            }
+        });
+
+        /*
+         * 密送按钮重写
+         */
+        Bcc_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Bcc_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Bcc_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
+                Bcc_Button.setToolTipText("什么是密送:\t同时将这一封邮件发送给其他联系人，但收件人及抄送人不会看到密送人。");
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Bcc_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Bcc_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
+                super.mouseExited(e);
+            }
+        });
+
+        /*
+         * 分别发送按钮重写
+         */
+        SendSeparately_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                SendSeparately_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                SendSeparately_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
+                SendSeparately_Button.setToolTipText("什么是分别发送:\n会对多个人进行一对一发送。每个人将收到单独发送给TA的邮件");
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                SendSeparately_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                SendSeparately_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
+                super.mouseExited(e);
+            }
+        });
     }
 }
