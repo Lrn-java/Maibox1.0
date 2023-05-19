@@ -2,6 +2,8 @@ package Maibox.li.Windows;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * @author Lrn
@@ -11,7 +13,10 @@ import java.awt.*;
 public interface MainInterfaceProperties {
     JFrame M_J_FRAME = new JFrame();
     JPanel M_J_PANEL = new JPanel();
+    JLabel Preview_Button = new JLabel("预览");
+    JLabel NewWindow_Button = new JLabel("新窗口打开");
     Container M_CONTAINER = M_J_FRAME.getContentPane();
+
     /**
      * 该方法的作用是主界面的属性
      */
@@ -44,6 +49,14 @@ public interface MainInterfaceProperties {
         jLabel3.setFont(new Font("微软雅黑", Font.PLAIN, 15));
         jLabel3.setForeground(Color.BLACK);
         M_J_PANEL.add(jLabel3);
+
+        Preview_Button.setBounds(1200,8,50,50);
+        Preview_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL.add(Preview_Button);
+
+        NewWindow_Button.setBounds(1250,8,100,50);
+        NewWindow_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL.add(NewWindow_Button);
     }
     JTextArea M_J_TEXT_AREA = new JTextArea();
     JScrollPane M_J_SCROLL_PANE = new JScrollPane(M_J_TEXT_AREA);
@@ -92,14 +105,23 @@ public interface MainInterfaceProperties {
 
         M_J_BUTTON_ONE.setText("写邮件");
         M_J_BUTTON_ONE.setBounds(5,10,15,15);
+        M_J_BUTTON_ONE.setOpaque(false);
+        M_J_BUTTON_ONE.setBorderPainted(false);
+        M_J_BUTTON_ONE.setContentAreaFilled(false);
         M_J_PANEL_MENU_BAR_ONE.add(M_J_BUTTON_ONE);
 
         M_J_BUTTON_TWO.setText("收件箱");
         M_J_BUTTON_TWO.setBounds(5,60,30,30);
+        M_J_BUTTON_TWO.setOpaque(false);
+        M_J_BUTTON_TWO.setBorderPainted(false);
+        M_J_BUTTON_TWO.setContentAreaFilled(false);
         M_J_PANEL_MENU_BAR_ONE.add(M_J_BUTTON_TWO);
 
         M_J_BUTTON_THREE.setText("通讯录");
         M_J_BUTTON_THREE.setBounds(5,100,30,30);
+        M_J_BUTTON_THREE.setOpaque(false);
+        M_J_BUTTON_THREE.setBorderPainted(false);
+        M_J_BUTTON_THREE.setContentAreaFilled(false);
         M_J_PANEL_MENU_BAR_ONE.add(M_J_BUTTON_THREE);
     }
 

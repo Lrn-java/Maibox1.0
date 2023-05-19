@@ -3,8 +3,11 @@ package Maibox.li.Windows;
 import Maibox.li.GetData.RegistrationInformation;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * @author Lrn
@@ -110,5 +113,67 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 }
             }
         });
+    }
+
+    /**
+     * 少量组件面板中按钮监听效果的重写
+     */
+    @Override
+    public void menuBarOne() {
+        MainInterfaceProperties.super.menuBarOne();
+        M_J_BUTTON_ONE.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                M_J_BUTTON_ONE.setForeground(Color.black);
+                M_J_BUTTON_TWO.setForeground(Color.black);
+                M_J_BUTTON_THREE.setForeground(Color.black);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                M_J_BUTTON_ONE.setForeground(Color.black);
+                M_J_BUTTON_TWO.setForeground(Color.black);
+                M_J_BUTTON_THREE.setForeground(Color.black);
+            }
+        });
+    }
+
+    /**
+     * 预览按钮,新窗口按钮按钮重写
+     */
+    @Override
+    public void mainInterface() {
+        MainInterfaceProperties.super.mainInterface();
+        Preview_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                super.mouseExited(e);
+            }
+        });
+
+        NewWindow_Button.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                super.mouseExited(e);
+            }
+        });
+
     }
 }
