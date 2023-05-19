@@ -278,4 +278,236 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
     }
+
+    /*
+     * 这个方法是来自MainInterfaceProperties.java
+     * 这个接口提供的第二菜单栏面板，这个面板中具有多个标签按钮，这些按钮都具有一些操作
+     */
+    @Override
+    public void menuBarTwo() {
+        MainInterfaceProperties.super.menuBarTwo();
+        ImportantContacts_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                ImportantContacts_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                ImportantContacts_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                ImportantContacts_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                ImportantContacts_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        StarMail_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                StarMail_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                StarMail_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                StarMail_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                StarMail_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        Sent_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Sent_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Sent_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Sent_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Sent_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        Deleted_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Deleted_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Deleted_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Deleted_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Deleted_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        dustbin_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                dustbin_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                dustbin_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                dustbin_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                dustbin_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        FileRelocation_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                FileRelocation_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                FileRelocation_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                FileRelocation_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                FileRelocation_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        AttachmentManagement.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                AttachmentManagement.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                AttachmentManagement.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                AttachmentManagement.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                AttachmentManagement.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        Calendar_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Calendar_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Calendar_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Calendar_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Calendar_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        notepad_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                notepad_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                notepad_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                notepad_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                notepad_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseExited(e);
+            }
+        });
+
+        resume_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                resume_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                resume_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                resume_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                resume_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        InvoiceAssistant_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                InvoiceAssistant_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                InvoiceAssistant_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                InvoiceAssistant_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                InvoiceAssistant_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        ReadDaily_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                ReadDaily_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                ReadDaily_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                ReadDaily_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                ReadDaily_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        greetingCard_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                greetingCard_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                greetingCard_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                greetingCard_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                greetingCard_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        documentation_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                documentation_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                documentation_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                documentation_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                documentation_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseExited(e);
+            }
+        });
+    }
 }

@@ -164,7 +164,7 @@ public interface MainInterfaceProperties {
     JLabel DraftBin_JButton = new JLabel("草稿箱");
     JLabel Deleted_JButton = new JLabel("已删除");
     JLabel dustbin_JButton = new JLabel("垃圾箱");
-    JLabel symbol2 = new JLabel("—————————————");
+    JLabel symbol2 = new JLabel("—————————————————————");
     JLabel FileRelocation_JButton = new JLabel("文件中转站");
     JLabel AttachmentManagement = new JLabel("附件管理");
     JLabel Calendar_JButton = new JLabel("日历");
@@ -214,9 +214,9 @@ public interface MainInterfaceProperties {
         M_J_PANEL_MENU_BAR_TWO.add(dustbin_JButton);
 
         //符号
-        /*symbol2.setBounds(70,120,100,100);
-        symbol2.setFont(new Font("微软雅黑",Font.PLAIN,14));
-        M_J_PANEL_MENU_BAR_TWO.add(symbol2);*/
+        symbol2.setBounds(0,260,600,3);
+        symbol2.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL_MENU_BAR_TWO.add(symbol2);
 
         //文件中转站
         FileRelocation_JButton.setBounds(70,245,100,100);
@@ -254,12 +254,12 @@ public interface MainInterfaceProperties {
         M_J_PANEL_MENU_BAR_TWO.add(ReadDaily_JButton);
 
         //贺卡
-        greetingCard_JButton.setBounds(70,475,100,100);
+        greetingCard_JButton.setBounds(70,490,100,100);
         greetingCard_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(greetingCard_JButton);
 
         //文档
-        documentation_JButton.setBounds(70,510,100,100);
+        documentation_JButton.setBounds(70,525,100,100);
         documentation_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(documentation_JButton);
     }
