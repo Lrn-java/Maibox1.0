@@ -165,19 +165,19 @@ public interface MainInterfaceProperties {
      * 该方法是主界面标题栏
      */
     default void titleBar(){
-        //ImageIcon M_LOGO = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\Logo.jpg");
-        //JLabel logo = new JLabel(M_LOGO);
-        //logo.setBounds(10,20,175,50);
-        //logo.setBackground(new Color(255,255,255,0));
-       // logo.setForeground(new Color(255,255,255,0));
-       // M_J_FRAME.getLayeredPane().add(logo,new Integer(Integer.MIN_VALUE));
+        ImageIcon M_LOGO = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\Logo.jpg");
+        JLabel logo = new JLabel(M_LOGO);
+        logo.setBounds(10,20,175,50);
+        logo.setBackground(new Color(255,255,255,0));
+        logo.setForeground(new Color(255,255,255,0));
+        M_J_FRAME.getLayeredPane().add(logo,new Integer(Integer.MIN_VALUE));
         M_J_PANEL_TITLE_BAR.setBounds(0, 10, 1920, 120);
         M_J_PANEL_TITLE_BAR.setBackground(Color.white);
-        //M_J_PANEL_TITLE_BAR.add(logo);
+        M_J_PANEL_TITLE_BAR.add(logo);
         M_J_FRAME.add(M_J_PANEL_TITLE_BAR);
         M_J_PANEL_TITLE_BAR.setLayout(null);
         M_CONTAINER.add(M_J_PANEL_TITLE_BAR);
-        //logo.setOpaque(true);
+        logo.setOpaque(true);
     }
     /**
      * 四个组件:
