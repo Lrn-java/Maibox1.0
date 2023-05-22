@@ -3,6 +3,8 @@ package Maibox.li.Windows;
 import Maibox.li.GetData.RegistrationInformation;
 
 import javax.swing.*;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -181,22 +183,25 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
     @Override
     public void mainInterface() {
         MainInterfaceProperties.super.mainInterface();
-        /*
-         * 预览按钮重写
-         */
-        Preview_Button.addMouseListener(new MouseAdapter() {
+        M_J_LABEL.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseEntered(MouseEvent e) {
-                Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                Preview_Button.setFont(new Font("微软雅黑",Font.BOLD,14));
-                super.mouseEntered(e);
-            }
+            public void mouseClicked(MouseEvent e) {
+                        JFrame frame = new JFrame("文件对话框示例");
 
-            @Override
-            public void mouseExited(MouseEvent e) {
-                Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                Preview_Button.setFont(new Font("微软雅黑",Font.PLAIN,14));
-                super.mouseExited(e);
+                        // 创建文件选择器对象
+                        JFileChooser fileChooser = new JFileChooser();
+
+                        // 显示文件对话框并等待用户选择文件或目录
+                        int result = fileChooser.showOpenDialog(frame);
+
+                        // 如果用户选择了文件或目录，则打印选择的路径
+                        if (result == JFileChooser.APPROVE_OPTION) {
+                            System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                        }
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.pack();
+                        frame.setVisible(true);
+                super.mouseClicked(e);
             }
         });
 
