@@ -46,6 +46,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             menuBarOne();
             menuBarTwo();
             menuBarThree();
+            setLines();
 
             //登录成功后关闭登录界面
             J_FRAME.setVisible(false);
@@ -278,7 +279,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
     }
-
     /*
      * 这个方法是来自MainInterfaceProperties.java
      * 这个接口提供的第二菜单栏面板，这个面板中具有多个标签按钮，这些按钮都具有一些操作
@@ -330,6 +330,22 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             public void mouseExited(MouseEvent e) {
                 Sent_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 Sent_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        DraftBin_JButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                DraftBin_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                DraftBin_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                DraftBin_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                DraftBin_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
                 super.mouseExited(e);
             }
         });
@@ -425,7 +441,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             @Override
             public void mouseExited(MouseEvent e) {
                 notepad_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                notepad_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                notepad_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
                 super.mouseExited(e);
             }
         });
@@ -437,7 +453,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 resume_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
                 super.mouseEntered(e);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 resume_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -505,7 +520,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             @Override
             public void mouseExited(MouseEvent e) {
                 documentation_JButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                documentation_JButton.setFont(new Font("微软雅黑",Font.BOLD,15));
+                documentation_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
                 super.mouseExited(e);
             }
         });

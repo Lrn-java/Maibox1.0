@@ -1,6 +1,10 @@
 package Maibox.li.GetData;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author 该接口用来读取用户信息
@@ -20,6 +24,8 @@ public interface RegistrationInformation {
 
             fileWriter = new FileWriter(file, true);
             bufferedWriter = new BufferedWriter(fileWriter);
+            //使用集合类来保存值
+            Set set = new HashSet();
 
             FileReader fileReader = new FileReader("C:\\Users\\Lrn\\Desktop\\File数据库.txt");
 

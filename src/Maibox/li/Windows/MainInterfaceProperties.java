@@ -2,10 +2,6 @@ package Maibox.li.Windows;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.Writer;
-import java.util.Spliterator;
 
 /**
  * @author Lrn
@@ -17,6 +13,8 @@ public interface MainInterfaceProperties {
     JPanel M_J_PANEL = new JPanel();
     JLabel jLabel1 = new JLabel("新邮件");
     JLabel jLabel2 = new JLabel("收件人");
+    JTextField J_TEXT_FIELD_One = new JTextField();
+    JTextField M_J_TEXT_FIELD_Two = new JTextField();
     JLabel jLabel3 = new JLabel("主  题");
     JLabel Preview_Button = new JLabel("预览");
     JLabel NewWindow_Button = new JLabel("新窗口打开");
@@ -24,12 +22,18 @@ public interface MainInterfaceProperties {
     JLabel Bcc_Button = new JLabel("密送");
     JLabel symbol = new JLabel("|");
     JLabel SendSeparately_Button = new JLabel("分别发送");
+    JButton Send_JButton = new JButton("发送");
+    JButton SaveTheDraft_JButton = new JButton("存草稿");
     Container M_CONTAINER = M_J_FRAME.getContentPane();
+
 
     /**
      * 该方法的作用是主界面的属性
      */
     default void mainInterface() {
+        JComboBox<String> J_COMBO_BOX = new JComboBox<String>();
+        //下拉列表内容
+        String[] Box = {"本地上传","拖拽上传"};
         M_J_FRAME.setBounds(0, 0, 1920, 1080);
         M_J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         M_J_FRAME.setLayout(null);
@@ -48,16 +52,31 @@ public interface MainInterfaceProperties {
         M_J_PANEL.add(jLabel1);
 
         //收件人
-        jLabel2.setBounds(20, 40, 50, 50);
+        jLabel2.setBounds(20, 60, 50, 50);
         jLabel2.setFont(new Font("微软雅黑", Font.PLAIN, 15));
-        jLabel2.setForeground(Color.BLACK);
         M_J_PANEL.add(jLabel2);
 
+        //收件人文本框
+        J_TEXT_FIELD_One.setBorder(BorderFactory.createMatteBorder(0,0,0,0,Color.BLACK));
+        J_TEXT_FIELD_One.setText("输入地址");
+        J_TEXT_FIELD_One.setBackground(Color.white);
+        J_TEXT_FIELD_One.setForeground(Color.BLACK);
+        J_TEXT_FIELD_One.setBounds(70,75,1100,20);
+        M_J_PANEL.add(J_TEXT_FIELD_One);
+
         //主题
-        jLabel3.setBounds(20, 75, 50, 50);
+        jLabel3.setBounds(20, 115, 50, 50);
         jLabel3.setFont(new Font("微软雅黑", Font.PLAIN, 15));
         jLabel3.setForeground(Color.BLACK);
         M_J_PANEL.add(jLabel3);
+
+        //主题文本框
+        M_J_TEXT_FIELD_Two.setBorder(BorderFactory.createMatteBorder(0,0,0,0,Color.BLACK));
+        M_J_TEXT_FIELD_Two.setText("输入主题");
+        M_J_TEXT_FIELD_Two.setBackground(Color.white);
+        M_J_TEXT_FIELD_Two.setForeground(Color.BLACK);
+        M_J_TEXT_FIELD_Two.setBounds(70,135,1100,20);
+        M_J_PANEL.add(M_J_TEXT_FIELD_Two);
 
         //预览
         Preview_Button.setBounds(1200,8,50,50);
@@ -70,29 +89,65 @@ public interface MainInterfaceProperties {
         M_J_PANEL.add(NewWindow_Button);
 
         //抄送
-        carbonCopy_Button.setBounds(1180,75,50,50);
+        carbonCopy_Button.setBounds(1180,60,50,50);
         carbonCopy_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(carbonCopy_Button);
 
         //密送
-        Bcc_Button.setBounds(1225,75,50,50);
+        Bcc_Button.setBounds(1225,60,50,50);
         Bcc_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(Bcc_Button);
 
         //抄送与密送之间的一个符号
-        symbol.setBounds(1260,75,50,50);
+        symbol.setBounds(1260,60,50,50);
         symbol.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(symbol);
 
         //分别发送
-        SendSeparately_Button.setBounds(1270,75,100,50);
+        SendSeparately_Button.setBounds(1270,60,75,50);
         SendSeparately_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(SendSeparately_Button);
 
+        //发送按钮
+        Send_JButton.setBounds(20,800,75,25);
+        M_J_PANEL.add(Send_JButton);
+
+        //存草稿按钮
+        SaveTheDraft_JButton.setBounds(110,800,75,25);
+        M_J_PANEL.add(SaveTheDraft_JButton);
+    }
+
+    JLabel Lines_One = new JLabel();
+    JLabel Lines_Two = new JLabel();
+    JLabel Lines_Three = new JLabel();
+    JLabel Lines_Four = new JLabel();
+
+    /*
+     * 该方法是线条方法
+     */
+    default void setLines(){
+        Lines_One.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
+        Lines_One.setBounds(20,95,1310,20);
+        Lines_One.setBackground(new Color(255,255,255,0));
+        Lines_One.setForeground(Color.GRAY);
+        M_J_PANEL.add(Lines_One);
+
+        Lines_Two.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
+        Lines_Two.setBounds(20,150,1310,20);
+        Lines_Two.setBackground(new Color(155,255,255,0));
+        Lines_Two.setForeground(Color.GRAY);
+        M_J_PANEL.add(Lines_Two);
+
+        Lines_Three.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
+        //Lines_Three.setBounds();
+        M_J_PANEL.add(Lines_Three);
+
+        Lines_Four.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
+        //Lines_Four.setBounds();
+        M_J_PANEL.add(Lines_Four);
     }
     JTextArea M_J_TEXT_AREA = new JTextArea();
     JScrollPane M_J_SCROLL_PANE = new JScrollPane(M_J_TEXT_AREA);
-
     /**
      * 面板中添加文本域
      */
@@ -102,31 +157,35 @@ public interface MainInterfaceProperties {
         M_J_TEXT_AREA.setRows(4);
         M_J_TEXT_AREA.setColumns(80);
 
-        M_J_SCROLL_PANE.setBounds(20, 200, 1200, 650);
+        M_J_SCROLL_PANE.setBounds(20, 220, 1350, 550);
         M_J_PANEL.add(M_J_SCROLL_PANE);
     }
     JPanel M_J_PANEL_TITLE_BAR = new JPanel();
-
     /**
      * 该方法是主界面标题栏
      */
     default void titleBar(){
+        //ImageIcon M_LOGO = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\Logo.jpg");
+        //JLabel logo = new JLabel(M_LOGO);
+        //logo.setBounds(10,20,175,50);
+        //logo.setBackground(new Color(255,255,255,0));
+       // logo.setForeground(new Color(255,255,255,0));
+       // M_J_FRAME.getLayeredPane().add(logo,new Integer(Integer.MIN_VALUE));
         M_J_PANEL_TITLE_BAR.setBounds(0, 10, 1920, 120);
         M_J_PANEL_TITLE_BAR.setBackground(Color.white);
+        //M_J_PANEL_TITLE_BAR.add(logo);
+        M_J_FRAME.add(M_J_PANEL_TITLE_BAR);
+        M_J_PANEL_TITLE_BAR.setLayout(null);
         M_CONTAINER.add(M_J_PANEL_TITLE_BAR);
+        //logo.setOpaque(true);
     }
     /**
      * 四个组件:
      * M_J_PANEL_MENU_BAR_ONE:面板
-     * M_J_BUTTON_ONE:写邮件（JButton）
-     * M_J_BUTTON_TWO:收件箱(JButton)
+     * M_J_BUTTON_ONE:写邮件（JButton） .3333.
      * M_J_BUTTON_THREE:通讯录(JButton)
      */
     JPanel M_J_PANEL_MENU_BAR_ONE = new JPanel();
-    JButton M_J_BUTTON_ONE = new JButton();
-    JButton M_J_BUTTON_TWO = new JButton();
-    JButton M_J_BUTTON_THREE = new JButton();
-
     JLabel WriteAMessage_Button = new JLabel("写邮件");
     JLabel Inbox_Button = new JLabel("收件箱");
     JLabel Contacts_Button = new JLabel("通讯录");
@@ -184,82 +243,82 @@ public interface MainInterfaceProperties {
         M_CONTAINER.add(M_J_PANEL_MENU_BAR_TWO);
 
         //重要联系人
-        ImportantContacts_JButton.setBounds(70,0,100,100);
+        ImportantContacts_JButton.setBounds(70,0,100,50);
         ImportantContacts_JButton.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL_MENU_BAR_TWO.add(ImportantContacts_JButton);
 
         //星标邮件
-        StarMail_JButton.setBounds(70,35,100,100);
+        StarMail_JButton.setBounds(70,35,100,50);
         StarMail_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(StarMail_JButton);
 
         //已发送
-        Sent_JButton.setBounds(70,70,100,100);
+        Sent_JButton.setBounds(70,70,100,50);
         Sent_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(Sent_JButton);
 
         //草稿箱
-        DraftBin_JButton.setBounds(70,105,100,100);
+        DraftBin_JButton.setBounds(70,105,100,50);
         DraftBin_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(DraftBin_JButton);
 
         //已删除
-        Deleted_JButton.setBounds(70,140,100,100);
+        Deleted_JButton.setBounds(70,140,100,50);
         Deleted_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(Deleted_JButton);
 
         //垃圾箱
-        dustbin_JButton.setBounds(70,175,100,100);
+        dustbin_JButton.setBounds(70,175,100,50);
         dustbin_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(dustbin_JButton);
 
         //符号
-        symbol2.setBounds(0,260,600,3);
+        symbol2.setBounds(0,230,350,3);
         symbol2.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL_MENU_BAR_TWO.add(symbol2);
 
         //文件中转站
-        FileRelocation_JButton.setBounds(70,245,100,100);
+        FileRelocation_JButton.setBounds(70,245,100,50);
         FileRelocation_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(FileRelocation_JButton);
 
         //附件管理
-        AttachmentManagement.setBounds(70,280,100,100);
+        AttachmentManagement.setBounds(70,280,100,50);
         AttachmentManagement.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(AttachmentManagement);
 
         //日历
-        Calendar_JButton.setBounds(70,315,100,100);
+        Calendar_JButton.setBounds(70,315,100,50);
         Calendar_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(Calendar_JButton);
 
         //记事本
-        notepad_JButton.setBounds(70,350,100,100);
+        notepad_JButton.setBounds(70,350,100,50);
         notepad_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(notepad_JButton);
 
         //简历
-        resume_JButton.setBounds(70,385,100,100);
+        resume_JButton.setBounds(70,385,100,50);
         resume_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(resume_JButton);
 
         //发票助手
-        InvoiceAssistant_JButton.setBounds(70,420,100,100);
+        InvoiceAssistant_JButton.setBounds(70,420,100,50);
         InvoiceAssistant_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(InvoiceAssistant_JButton);
 
         //每日阅读
-        ReadDaily_JButton.setBounds(70,455,100,100);
+        ReadDaily_JButton.setBounds(70,455,100,50);
         ReadDaily_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(ReadDaily_JButton);
 
         //贺卡
-        greetingCard_JButton.setBounds(70,490,100,100);
+        greetingCard_JButton.setBounds(70,490,100,50);
         greetingCard_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(greetingCard_JButton);
 
         //文档
-        documentation_JButton.setBounds(70,525,100,100);
+        documentation_JButton.setBounds(70,525,100,50);
         documentation_JButton.setFont(new Font("微软雅黑",Font.PLAIN,14));
         M_J_PANEL_MENU_BAR_TWO.add(documentation_JButton);
     }
