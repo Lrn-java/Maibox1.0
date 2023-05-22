@@ -233,6 +233,7 @@ public interface MainInterfaceProperties {
     JLabel ReadDaily_JButton = new JLabel("每日阅读");
     JLabel greetingCard_JButton = new JLabel("贺卡");
     JLabel documentation_JButton = new JLabel("文档");
+
     /**
      * 该方法是邮箱菜单栏具有大量组件
      */
