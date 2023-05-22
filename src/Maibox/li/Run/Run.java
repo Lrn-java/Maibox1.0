@@ -13,7 +13,5 @@ public class Run {
         long end = System.currentTimeMillis();
         out.println("程序总运行时间为:" + (end - start) + "毫秒");
 
-        long a;
-
     }
 }
