@@ -2,6 +2,8 @@ package Maibox.li.Windows;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author Lrn
@@ -31,9 +33,36 @@ public interface MainInterfaceProperties {
      * 该方法的作用是主界面的属性
      */
     default void mainInterface() {
-        JComboBox<String> J_COMBO_BOX = new JComboBox<String>();
+        JComboBox<String> J_COMBO_BOX = new JComboBox<>();
+
+        String[] Box = new String[]{"添加附件","本地上传","拖拽上传"};
+        JLabel jLabel = new JLabel(Box[0]);
+
+
+        J_COMBO_BOX.addItem(Box[0]);
+        J_COMBO_BOX.addItem(Box[1]);
+        J_COMBO_BOX.addItem(Box[2]);
+        J_COMBO_BOX.setBounds(50,170,100,30);
+
+        J_COMBO_BOX.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new JFrame("请选择您的文件");
+
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setBounds(0,0,600,800);
+
+                int result = fileChooser.showOpenDialog(jFrame);
+                if(result == JFileChooser.APPROVE_OPTION){
+                    System.out.println("选择的路径" + fileChooser.getSelectedFile().getAbsolutePath());
+                }
+            }
+        });
+
+        M_J_PANEL.add(J_COMBO_BOX);
+        M_J_PANEL.add(jLabel);
+
         //下拉列表内容
-        String[] Box = {"本地上传","拖拽上传"};
         M_J_FRAME.setBounds(0, 0, 1920, 1080);
         M_J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         M_J_FRAME.setLayout(null);
