@@ -34,7 +34,7 @@ public interface MainInterfaceProperties {
      * 该方法的作用是主界面的属性
      */
     default void mainInterface() {
-
+        //添加附件下拉列表
         M_J_LABEL.setBounds(30,170,80,30);
         M_J_LABEL.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
