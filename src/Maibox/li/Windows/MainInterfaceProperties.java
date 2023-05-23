@@ -30,7 +30,8 @@ public interface MainInterfaceProperties {
 
     JLabel M_J_LABEL = new JLabel("添加附件");
     JComboBox<String> M_J_COMBO_BOX = new JComboBox<>(new String[]{"本地文件","拖拽文件"});
-    
+
+    JComboBox<String> M_J_COMBD_BOX_TWO = new JComboBox<>(new String[]{"记事本,位置,日程"});
     JLabel M_J_LABEL_TWO = new JLabel("超大附件");
 
     JLabel M_J_LABEL_THREE = new JLabel("图片");
@@ -54,7 +55,8 @@ public interface MainInterfaceProperties {
         M_J_PANEL.add(M_J_COMBO_BOX);
         
         //超大附件
-        M_J_LABEL_TWO.setBounds(130,170,50,30);
+        M_J_LABEL_TWO.setBounds(130,170,80,30);
+        M_J_LABEL_TWO.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_TWO);
 
         //图片
@@ -65,6 +67,8 @@ public interface MainInterfaceProperties {
         M_J_LABEL_FOUR.setBounds(330,170,50,30);
         M_J_LABEL_FOUR.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_FOUR);
+        M_J_PANEL.add(M_J_LABEL);
+        M_J_PANEL.add(M_J_COMBO_BOX);
 
         //表情
         M_J_LABEL_FIVE.setBounds(330,170,50,30);
@@ -75,6 +79,7 @@ public interface MainInterfaceProperties {
         M_J_LABEL_SIX.setBounds(430,170,50,30);
         M_J_LABEL_SIX.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_SIX);
+
 
         //主界面
         M_J_FRAME.setSize(1920, 1080);
