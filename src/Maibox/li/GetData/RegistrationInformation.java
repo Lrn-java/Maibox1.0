@@ -37,33 +37,15 @@ public interface RegistrationInformation {
 
             bufferedWriter.write(user + "\n");
             bufferedWriter.flush();
+            
+            fileWriter.close();
+            bufferedWriter.close();
+            
 
             //刷新
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            /*
-             * 关闭流
-             */
-            if (fileWriter != null) {
-                try {
-                    fileWriter.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            /*
-             * 关闭流
-             */
-            if (bufferedWriter != null) {
-                try {
-                    bufferedWriter.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-
-        }
+        } 
     }
 
 
