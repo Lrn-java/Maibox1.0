@@ -169,7 +169,32 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
         });
 
     }
+    /**
+     *超大附件，这个方法具体操作是用来给用户发送特大内容，开辟的一个大容量通道
+     */
+    pulbic void mainInterface(){
+        MainInterfaceProperties.super.mainInterface();
+        M_J_LABEL_TWO.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                        JFrame frame = new JFrame("文件对话框示例");
 
+                        // 创建文件选择器对象
+                        JFileChooser fileChooser = new JFileChooser();
+
+                        // 显示文件对话框并等待用户选择文件或目录
+                        int result = fileChooser.showOpenDialog(frame);
+
+                        // 如果用户选择了文件或目录，则打印选择的路径
+                        if (result == JFileChooser.APPROVE_OPTION) {
+                            System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                        }
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.pack();
+                        frame.setVisible(true);
+                super.mouseClicked(e);
+            }
+    }
 
     /**
      * 这个方法是预览窗口
