@@ -43,7 +43,7 @@ public interface MainInterfaceProperties {
 
         M_J_COMBO_BOX.setBounds(30,170,80,30);
         M_J_COMBO_BOX.setSelectedIndex(-1);
-        M_J_PANEL.add(M_J_LABEL);
+        M_J_PANEL.add(M_J_LABEL_TWO);
         M_J_PANEL.add(M_J_COMBO_BOX);
         
         //超大附件
