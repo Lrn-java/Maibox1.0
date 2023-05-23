@@ -3,8 +3,6 @@ package Maibox.li.Windows;
 import Maibox.li.GetData.RegistrationInformation;
 
 import javax.swing.*;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +15,7 @@ import java.awt.event.MouseEvent;
 public class LoginScreen implements Login,RegistrationInterface, RegistrationInformation,MainInterfaceProperties{
 
 
-    private static final int[] LENGTH = new int[]{0,6,16};
+    int[] LENGTH = new int[]{0,6,16};
     public LoginScreen() {
         this.setJframe();
         this.setLoginButton();
@@ -119,7 +117,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
     /**
      * 少量组件面板中按钮监听效果的重写
      */
-
     @Override
     public void menuBarOne() {
         MainInterfaceProperties.super.menuBarOne();
@@ -174,37 +171,96 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
     }
 
 
-
     /**
-     * 预览按钮,新窗口按钮按钮重写
+     * 这个方法是预览窗口
      */
-    @Override
     public void mainInterface() {
-        MainInterfaceProperties.super.mainInterface();
-        M_J_LABEL.addMouseListener(new MouseAdapter() {
+
+            //该方法是一个添加附件的按钮，这个按钮组件可以进行磁盘的读取，供用户添加附件
+            MainInterfaceProperties.super.mainInterface();
+            M_J_LABEL.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    JFrame frame = new JFrame("文件对话框示例");
+
+                    // 创建文件选择器对象
+                    JFileChooser fileChooser = new JFileChooser();
+
+                    // 显示文件对话框并等待用户选择文件或目录
+                    int result = fileChooser.showOpenDialog(frame);
+
+                    // 如果用户选择了文件或目录，则打印选择的路径
+                    if (result == JFileChooser.APPROVE_OPTION) {
+                        System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                    }
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.pack();
+                    frame.setVisible(true);
+                    super.mouseClicked(e);
+                }
+            });
+
+            //该方法是一个超大附件的窗口，用户可以添加容量大于100MB的内容
+        M_J_LABEL_TWO.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                        JFrame frame = new JFrame("文件对话框示例");
+                JFrame frame = new JFrame("文件对话框示例");
 
-                        // 创建文件选择器对象
-                        JFileChooser fileChooser = new JFileChooser();
+                // 创建文件选择器对象
+                JFileChooser fileChooser = new JFileChooser();
 
-                        // 显示文件对话框并等待用户选择文件或目录
-                        int result = fileChooser.showOpenDialog(frame);
+                // 显示文件对话框并等待用户选择文件或目录
+                int result = fileChooser.showOpenDialog(frame);
 
-                        // 如果用户选择了文件或目录，则打印选择的路径
-                        if (result == JFileChooser.APPROVE_OPTION) {
-                            System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
-                        }
-                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        frame.pack();
-                        frame.setVisible(true);
+                // 如果用户选择了文件或目录，则打印选择的路径
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                }
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setBounds(270,140,400,400);
+                frame.pack();
+                //frame.setVisible(true);
                 super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                M_J_LABEL_TWO.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                M_J_LABEL_TWO.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                M_J_LABEL_TWO.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                M_J_LABEL_TWO.setFont(new Font("微软雅黑",Font.PLAIN,15 ));
+                super.mouseExited(e);
             }
         });
 
         /*
-         * 新窗口打开按钮重写
+         * 预览按钮,新窗口按钮按钮重写
+         */
+        Preview_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Preview_Button.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Preview_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                Preview_Button.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseEntered(e);
+                super.mouseExited(e);
+            }
+        });
+
+        /*
+         * 预览和新窗口按钮
          */
         NewWindow_Button.addMouseListener(new MouseAdapter() {
 
@@ -286,7 +342,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
      * 这个方法是来自MainInterfaceProperties.java
      * 这个接口提供的第二菜单栏面板，这个面板中具有多个标签按钮，这些按钮都具有一些操作
      */
-    @Override
+
     public void menuBarTwo() {
         MainInterfaceProperties.super.menuBarTwo();
         ImportantContacts_JButton.addMouseListener(new MouseAdapter() {

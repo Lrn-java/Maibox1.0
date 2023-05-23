@@ -32,30 +32,50 @@ public interface MainInterfaceProperties {
     JComboBox<String> M_J_COMBO_BOX = new JComboBox<>(new String[]{"本地文件","拖拽文件"});
     
     JLabel M_J_LABEL_TWO = new JLabel("超大附件");
-   
+
+    JLabel M_J_LABEL_THREE = new JLabel("图片");
+
+    JLabel M_J_LABEL_FOUR = new JLabel("插入");
+
+    JLabel M_J_LABEL_FIVE = new JLabel("表情");
+
+    JLabel M_J_LABEL_SIX = new JLabel("格式");
+
     /**
      * 该方法的作用是主界面的属性
      */
     default void mainInterface() {
         //添加附件下拉列表
-        M_J_LABEL_TWO.setBounds(30,170,80,30);
-        M_J_LABEL_TWO.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
+        M_J_LABEL.setBounds(30,170,80,30);
+        M_J_LABEL.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         M_J_COMBO_BOX.setBounds(30,170,80,30);
         M_J_COMBO_BOX.setSelectedIndex(-1);
-        M_J_PANEL.add(M_J_LABEL_TWO);
+        M_J_PANEL.add(M_J_LABEL);
         M_J_PANEL.add(M_J_COMBO_BOX);
         
         //超大附件
-        M_J_LABEL.setBounds();
-        M_J_LABEL.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        
-        M_J_COMBO_BOX.setBounds();
-        M_J_COMBO_BOX.setSelectedIndex(-1);
-        M_J_PANEL.add(M_);
-        M_J_PANEL.add();
-        
-            
+        M_J_LABEL_TWO.setBounds(130,170,50,30);
+        M_J_PANEL.add(M_J_LABEL_TWO);
+
+        //图片
+        M_J_LABEL_THREE.setBounds(230,170,50,30);
+        M_J_PANEL.add(M_J_LABEL_THREE);
+
+        //插入
+        M_J_LABEL_FOUR.setBounds(330,170,50,30);
+        M_J_LABEL_FOUR.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL.add(M_J_LABEL_FOUR);
+
+        //表情
+        M_J_LABEL_FIVE.setBounds(330,170,50,30);
+        M_J_LABEL_FIVE.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL.add(M_J_LABEL_FIVE);
+
+        //格式
+        M_J_LABEL_SIX.setBounds(430,170,50,30);
+        M_J_LABEL_SIX.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL.add(M_J_LABEL_SIX);
+
         //主界面
         M_J_FRAME.setSize(1920, 1080);
         M_J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
