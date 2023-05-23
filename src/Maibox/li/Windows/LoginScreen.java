@@ -16,8 +16,6 @@ import java.awt.event.MouseEvent;
  */
 public class LoginScreen implements Login,RegistrationInterface, RegistrationInformation,MainInterfaceProperties{
 
-    public static final String USER = null;
-    public static final String PASSWORD = null;
 
     private static final int[] LENGTH = new int[]{0,6,16};
     public LoginScreen() {
