@@ -250,7 +250,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
 
                 // 创建文件选择器对象
                 JFileChooser fileChooser = new JFileChooser();
-                String[] Image_Format = new String[]{"JPG","jpg","GIF","gif","Png","png","TIF","tif","PCX","pcx","TGA","tga","EXIF","exif"};
+                String[] Image_Format = new String[]{"JPG","jpg","GIF","gif","Png","png","TIF","tif","PCX","pcx","TGA","tga","EXIF","exif"，"WEBP","webp","INDD","indd"};
                 FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter(Image_Format[0],Image_Format[1]);
                 FileNameExtensionFilter fileNameExtensionFilter1 = new FileNameExtensionFilter(Image_Format[2],Image_Format[3]);
                 FileNameExtensionFilter fileNameExtensionFilter2 = new FileNameExtensionFilter(Image_Format[4],Image_Format[5]);
@@ -258,7 +258,15 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 FileNameExtensionFilter fileNameExtensionFilter4 = new FileNameExtensionFilter(Image_Format[8],Image_Format[9]);
                 FileNameExtensionFilter fileNameExtensionFilter5 = new FileNameExtensionFilter(Image_Format[10],Image_Format[11]);
                 FileNameExtensionFilter fileNameExtensionFilter6 = new FileNameExtensionFilter(Image_Format[12],Image_Format[13]);
-                //FileNameExtensionFilter fileNameExtensionFilter7 = new FileNameExtensionFilter(Image_Format[2],Image_Format[3]);
+                FileNameExtensionFilter fileNameExtensionFilter7 = new FileNameExtensionFilter(Image_Format[14],Image_Format[15]);
+                FileNameExtensionFilter fileNameExtensionFilter8 = new FileNameExtensionFilter(Image_Format[16],Image_Format[17]);
+                FileNameExtensionFilter fileNameExtensionFilter9 = new FileNameExtensionFilter(Image_Format[14],Image_Format[15]);
+                
+                byte i = 1;
+                for(int i = 0;i<=Image_Format.length;i++){
+                    out.println("第"+j+"个索引"+Image_Format[i]);
+                    j++
+                }
 
                 fileChooser.setFileFilter(fileNameExtensionFilter);
                 fileChooser.setFileFilter(fileNameExtensionFilter1);
@@ -267,6 +275,9 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 fileChooser.setFileFilter(fileNameExtensionFilter4);
                 fileChooser.setFileFilter(fileNameExtensionFilter5);
                 fileChooser.setFileFilter(fileNameExtensionFilter6);
+                fileChooser.setFileFilter(fileNameExtensionFilter7);
+                fileChooser.setFileFilter(fileNameExtensionFilter8);
+                fileChooser.setFileFilter(fileNameExtensionFilter9);
 
 
                 // 显示文件对话框并等待用户选择文件或目录
