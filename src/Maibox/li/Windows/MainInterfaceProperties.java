@@ -61,6 +61,7 @@ public interface MainInterfaceProperties {
 
         //图片
         M_J_LABEL_THREE.setBounds(230,170,50,30);
+        M_J_LABEL_THREE.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_THREE);
 
         //插入

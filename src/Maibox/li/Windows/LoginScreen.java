@@ -3,11 +3,13 @@ package Maibox.li.Windows;
 import Maibox.li.GetData.RegistrationInformation;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 /**
  * @author Lrn
@@ -241,6 +243,60 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
 
+        M_J_LABEL_THREE.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JFrame frame = new JFrame();
+
+                // 创建文件选择器对象
+                JFileChooser fileChooser = new JFileChooser();
+                String[] Image_Format = new String[]{"JPG","jpg","GIF","gif","Png","png","TIF","tif","PCX","pcx","TGA","tga","EXIF","exif"};
+                FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter(Image_Format[0],Image_Format[1]);
+                FileNameExtensionFilter fileNameExtensionFilter1 = new FileNameExtensionFilter(Image_Format[2],Image_Format[3]);
+                FileNameExtensionFilter fileNameExtensionFilter2 = new FileNameExtensionFilter(Image_Format[4],Image_Format[5]);
+                FileNameExtensionFilter fileNameExtensionFilter3 = new FileNameExtensionFilter(Image_Format[6],Image_Format[7]);
+                FileNameExtensionFilter fileNameExtensionFilter4 = new FileNameExtensionFilter(Image_Format[8],Image_Format[9]);
+                FileNameExtensionFilter fileNameExtensionFilter5 = new FileNameExtensionFilter(Image_Format[10],Image_Format[11]);
+                FileNameExtensionFilter fileNameExtensionFilter6 = new FileNameExtensionFilter(Image_Format[12],Image_Format[13]);
+                //FileNameExtensionFilter fileNameExtensionFilter7 = new FileNameExtensionFilter(Image_Format[2],Image_Format[3]);
+
+                fileChooser.setFileFilter(fileNameExtensionFilter);
+                fileChooser.setFileFilter(fileNameExtensionFilter1);
+                fileChooser.setFileFilter(fileNameExtensionFilter2);
+                fileChooser.setFileFilter(fileNameExtensionFilter3);
+                fileChooser.setFileFilter(fileNameExtensionFilter4);
+                fileChooser.setFileFilter(fileNameExtensionFilter5);
+                fileChooser.setFileFilter(fileNameExtensionFilter6);
+
+
+                // 显示文件对话框并等待用户选择文件或目录
+                int result = fileChooser.showOpenDialog(frame);
+
+                // 如果用户选择了文件或目录，则打印选择的路径
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                }
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setBounds(270,140,400,400);
+                frame.pack();
+                super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                M_J_LABEL_THREE.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                M_J_LABEL_THREE.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                M_J_LABEL_THREE.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                M_J_LABEL_THREE.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
         /*
          * 预览按钮,新窗口按钮按钮重写
          */
@@ -273,6 +329,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 NewWindow_Button.setFont(new Font("微软雅黑",Font.BOLD,15));
                 super.mouseEntered(e);
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 NewWindow_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
