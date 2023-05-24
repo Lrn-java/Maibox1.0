@@ -204,8 +204,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
          该按钮是一个<超大附件>按钮:
          1.当用户点击超大附件按钮时会弹出一个自己磁盘的列表。可供用户选择。
          */
-
-
         M_J_LABEL_TWO.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -244,95 +242,49 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
         });
 
         M_J_LABEL_THREE.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                JFrame frame = new JFrame();
+                                             @Override
+                                             public void mouseClicked(MouseEvent e) {
+                                                 JFrame frame = new JFrame();
 
-                // 创建文件选择器对象
-                JFileChooser fileChooser = new JFileChooser();
-                String[] Image_Format = new String[]{"JPG","jpg","GIF","gif","Png","png","TIF","tif","PCX","pcx","TGA","tga","EXIF","exif"，"WEBP","webp","INDD","indd"};
-                FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter(Image_Format[0],Image_Format[1]);
-                FileNameExtensionFilter fileNameExtensionFilter1 = new FileNameExtensionFilter(Image_Format[2],Image_Format[3]);
-                FileNameExtensionFilter fileNameExtensionFilter2 = new FileNameExtensionFilter(Image_Format[4],Image_Format[5]);
-                FileNameExtensionFilter fileNameExtensionFilter3 = new FileNameExtensionFilter(Image_Format[6],Image_Format[7]);
-                FileNameExtensionFilter fileNameExtensionFilter4 = new FileNameExtensionFilter(Image_Format[8],Image_Format[9]);
-                FileNameExtensionFilter fileNameExtensionFilter5 = new FileNameExtensionFilter(Image_Format[10],Image_Format[11]);
-                FileNameExtensionFilter fileNameExtensionFilter6 = new FileNameExtensionFilter(Image_Format[12],Image_Format[13]);
-                FileNameExtensionFilter fileNameExtensionFilter7 = new FileNameExtensionFilter(Image_Format[14],Image_Format[15]);
-                FileNameExtensionFilter fileNameExtensionFilter8 = new FileNameExtensionFilter(Image_Format[16],Image_Format[17]);
-                FileNameExtensionFilter fileNameExtensionFilter9 = new FileNameExtensionFilter(Image_Format[14],Image_Format[15]);
-                
-                byte i = 1;
-                for(int i = 0;i<=Image_Format.length;i++){
-                    out.println("第"+j+"个索引"+Image_Format[i]);
-                    j++
-                }
+                                                 // 创建文件选择器对象
+                                                 JFileChooser fileChooser = new JFileChooser();
+                                                 String[] Image_Format = new String[]{"JPG", "jpg", "GIF", "gif", "Png", "png", "TIF", "tif", "PCX", "pcx", "TGA", "tga", "EXIF", "exif", "WEBP", "webp", "INDD", "indd"};
+                                                 FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter(Image_Format[0], Image_Format[1]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter1 = new FileNameExtensionFilter(Image_Format[2], Image_Format[3]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter2 = new FileNameExtensionFilter(Image_Format[4], Image_Format[5]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter3 = new FileNameExtensionFilter(Image_Format[6], Image_Format[7]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter4 = new FileNameExtensionFilter(Image_Format[8], Image_Format[9]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter5 = new FileNameExtensionFilter(Image_Format[10], Image_Format[11]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter6 = new FileNameExtensionFilter(Image_Format[12], Image_Format[13]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter7 = new FileNameExtensionFilter(Image_Format[14], Image_Format[15]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter8 = new FileNameExtensionFilter(Image_Format[16], Image_Format[17]);
+                                                 FileNameExtensionFilter fileNameExtensionFilter9 = new FileNameExtensionFilter(Image_Format[14], Image_Format[15]);
 
-                fileChooser.setFileFilter(fileNameExtensionFilter);
-                fileChooser.setFileFilter(fileNameExtensionFilter1);
-                fileChooser.setFileFilter(fileNameExtensionFilter2);
-                fileChooser.setFileFilter(fileNameExtensionFilter3);
-                fileChooser.setFileFilter(fileNameExtensionFilter4);
-                fileChooser.setFileFilter(fileNameExtensionFilter5);
-                fileChooser.setFileFilter(fileNameExtensionFilter6);
-                fileChooser.setFileFilter(fileNameExtensionFilter7);
-                fileChooser.setFileFilter(fileNameExtensionFilter8);
-                fileChooser.setFileFilter(fileNameExtensionFilter9);
 
-                // 显示文件对话框并等待用户选择文件或目录
-                int result = fileChooser.showOpenDialog(frame);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter1);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter2);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter3);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter4);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter5);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter6);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter7);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter8);
+                                                 fileChooser.setFileFilter(fileNameExtensionFilter9);
 
-                // 如果用户选择了文件或目录，则打印选择的路径
-                if (result == JFileChooser.APPROVE_OPTION) {
-                    System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
-                }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setBounds(270,140,400,400);
-                frame.pack();
-                super.mouseClicked(e);
-            }
-           
-            //主界面中插入按钮的操作
-            M_J_LABEL_FOUR.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                JFrame frame = new JFrame();
+                                                 // 显示文件对话框并等待用户选择文件或目录
+                                                 int result = fileChooser.showOpenDialog(frame);
 
-                // 创建文件选择器对象
-                JFileChooser fileChooser = new JFileChooser();
- 
-                // 显示文件对话框并等待用户选择文件或目录
-                int result = fileChooser.showOpenDialog(frame);
-
-                // 如果用户选择了文件或目录，则打印选择的路径
-                if (result == JFileChooser.APPROVE_OPTION) {
-                    System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
-                }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setBounds(270,140,400,400);
-                frame.setText("插入");
-                frame.setFont(new Font("微软雅黑",Font.PLAN,15));
-                frame.pack();
-                super.mouseClicked(e);
-            }
-            
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                M_J_LABEL_FOUR.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                M_J_LABEL_FOUR.setFont(new Font("微软雅黑",Font.BOLD,15));
-                super.mouseEntered(e);
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                M_J_LABEL_FOUR.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                M_J_LABEL_FOUR.setFont(new Font("微软雅黑",Font.PLAIN,15));
-                super.mouseExited(e);
-            }
-        });
-            
-            
-
+                                                 // 如果用户选择了文件或目录，则打印选择的路径
+                                                 if (result == JFileChooser.APPROVE_OPTION) {
+                                                     System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                                                 }
+                                                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                                 frame.setBounds(270, 140, 400, 400);
+                                                 frame.pack();
+                                                 super.mouseClicked(e);
+                                             }
+                                         });
         /*
          * 预览按钮,新窗口按钮按钮重写
          */
