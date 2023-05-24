@@ -279,7 +279,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 fileChooser.setFileFilter(fileNameExtensionFilter8);
                 fileChooser.setFileFilter(fileNameExtensionFilter9);
 
-
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 
@@ -292,7 +291,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 frame.pack();
                 super.mouseClicked(e);
             }
-            
+           
+            //主界面中插入按钮的操作
             M_J_LABEL_FOUR.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -300,8 +300,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
 
                 // 创建文件选择器对象
                 JFileChooser fileChooser = new JFileChooser();
-                String[] Image_Format = new String[]{"JPG","jpg","GIF","gif","Png","png","TIF","tif","PCX","pcx","TGA","tga","EXIF","exif"，"WEBP","webp","INDD","indd"};
-                
+ 
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 
@@ -311,10 +310,12 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 }
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setBounds(270,140,400,400);
+                frame.setText("插入");
+                frame.setFont(new Font("微软雅黑",Font.PLAN,15));
                 frame.pack();
                 super.mouseClicked(e);
             }
-
+            
             @Override
             public void mouseEntered(MouseEvent e) {
                 M_J_LABEL_FOUR.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -329,6 +330,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 super.mouseExited(e);
             }
         });
+            
+            
 
         /*
          * 预览按钮,新窗口按钮按钮重写
