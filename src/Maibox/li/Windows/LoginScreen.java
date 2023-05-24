@@ -3,6 +3,7 @@ package Maibox.li.Windows;
 import Maibox.li.GetData.RegistrationInformation;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.util.Locale;
+import java.util.function.LongUnaryOperator;
+
+import static java.lang.System.out;
 
 /**
  * @author Lrn
@@ -193,7 +198,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
 
                     // 如果用户选择了文件或目录，则打印选择的路径
                     if (result == JFileChooser.APPROVE_OPTION) {
-                        System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                        out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
                     }
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     super.mouseClicked(e);
@@ -217,7 +222,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
 
                 // 如果用户选择了文件或目录，则打印选择的路径
                 if (result == JFileChooser.APPROVE_OPTION) {
-                    System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                    out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
                 }
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setBounds(270,140,400,400);
@@ -246,41 +251,28 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             public void mouseClicked(MouseEvent e) {
                 JFrame frame = new JFrame();
 
-                                                 // 创建文件选择器对象
                 JFileChooser fileChooser = new JFileChooser();
-                String[] Image_Format = new String[]{"JPG", "jpg", "GIF", "gif", "Png", "png", "TIF", "tif", "PCX", "pcx", "TGA", "tga", "EXIF", "exif", "WEBP", "webp", "INDD", "indd"};
-                FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter(Image_Format[0], Image_Format[1]);
-                FileNameExtensionFilter fileNameExtensionFilter1 = new FileNameExtensionFilter(Image_Format[2], Image_Format[3]);
-                FileNameExtensionFilter fileNameExtensionFilter2 = new FileNameExtensionFilter(Image_Format[4], Image_Format[5]);
-                FileNameExtensionFilter fileNameExtensionFilter3 = new FileNameExtensionFilter(Image_Format[6], Image_Format[7]);
-                FileNameExtensionFilter fileNameExtensionFilter4 = new FileNameExtensionFilter(Image_Format[8], Image_Format[9]);
-                FileNameExtensionFilter fileNameExtensionFilter5 = new FileNameExtensionFilter(Image_Format[10], Image_Format[11]);
-                FileNameExtensionFilter fileNameExtensionFilter6 = new FileNameExtensionFilter(Image_Format[12], Image_Format[13]);
-                FileNameExtensionFilter fileNameExtensionFilter7 = new FileNameExtensionFilter(Image_Format[14], Image_Format[15]);
-                FileNameExtensionFilter fileNameExtensionFilter8 = new FileNameExtensionFilter(Image_Format[16], Image_Format[17]);
-                FileNameExtensionFilter fileNameExtensionFilter9 = new FileNameExtensionFilter(Image_Format[14], Image_Format[15]);
+                String[] Image_Format_Name = new String[]{"BMP", "JPG", "PNG", "TIF", "GIF", "PCX", "TGA", "EXIF", "FPX", "SVG",
+                        "PSD", "CDR", "PCD", "DXF", "UFO", "EPS", "AI", "RAW","WMF","WEBP","AVIF","APNG"};
 
+                String[] Image_Format = new String[Image_Format_Name.length];
+                FileNameExtensionFilter[] filters = new FileNameExtensionFilter[Image_Format_Name.length];
 
-                fileChooser.setFileFilter(fileNameExtensionFilter);
-                fileChooser.setFileFilter(fileNameExtensionFilter1);
-                fileChooser.setFileFilter(fileNameExtensionFilter2);
-                fileChooser.setFileFilter(fileNameExtensionFilter3);
-                fileChooser.setFileFilter(fileNameExtensionFilter4);
-                fileChooser.setFileFilter(fileNameExtensionFilter5);
-                fileChooser.setFileFilter(fileNameExtensionFilter6);
-                fileChooser.setFileFilter(fileNameExtensionFilter7);
-                fileChooser.setFileFilter(fileNameExtensionFilter8);
-                fileChooser.setFileFilter(fileNameExtensionFilter9);
+                for (int i = 0; i < Image_Format_Name.length; i++) {
+                    String formatName = Image_Format_Name[i];
+                    String extension = formatName.toLowerCase();
+                    Image_Format[i] = extension;
+                    filters[i] = new FileNameExtensionFilter(formatName, extension);
+                    fileChooser.setFileFilter(filters[i]);
+                }
 
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 
                 // 如果用户选择了文件或目录，则打印选择的路径
                 if (result == JFileChooser.APPROVE_OPTION) {
-                    System.out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                    out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
                 }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setBounds(270, 140, 400, 400);
                 frame.pack();
                 super.mouseClicked(e);
             }
