@@ -72,12 +72,12 @@ public interface MainInterfaceProperties {
         M_J_PANEL.add(M_J_COMBO_BOX);
 
         //表情
-        M_J_LABEL_FIVE.setBounds(330,170,50,30);
+        M_J_LABEL_FIVE.setBounds(430,170,50,30);
         M_J_LABEL_FIVE.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_FIVE);
 
         //格式
-        M_J_LABEL_SIX.setBounds(430,170,50,30);
+        M_J_LABEL_SIX.setBounds(530,170,50,30);
         M_J_LABEL_SIX.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_SIX);
 
