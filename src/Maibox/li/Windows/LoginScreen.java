@@ -256,8 +256,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                         "PSD", "CDR", "PCD", "DXF", "UFO", "EPS", "AI", "RAW","WMF","WEBP","AVIF","APNG"};
 
                 String[] Image_Format = new String[Image_Format_Name.length];
-                FileNameExtensionFilter[] filters = new FileNameExtensionFilter[Image_Format_Name.length];
 
+                FileNameExtensionFilter[] filters = new FileNameExtensionFilter[Image_Format_Name.length];
                 for (int i = 0; i < Image_Format_Name.length; i++) {
                     String formatName = Image_Format_Name[i];
                     String extension = formatName.toLowerCase();
