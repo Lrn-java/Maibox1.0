@@ -265,7 +265,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                     filters[i] = new FileNameExtensionFilter(formatName, extension);
                     fileChooser.setFileFilter(filters[i]);
                 }
-
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 
