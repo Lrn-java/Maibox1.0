@@ -72,6 +72,7 @@ public interface Login {
      */
     JButton SIGN_BUTTON = new JButton();
     JButton REGISTRATION_BUTTON = new JButton();
+
     /**
      * 登录按钮
      */

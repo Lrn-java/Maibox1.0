@@ -6,11 +6,6 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import static java.lang.System.err;
 import static java.lang.System.out;
 
 /**
@@ -49,6 +44,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             menuBarTwo();
             menuBarThree();
             setLines();
+
             run();          //线程开启
             //登录成功后关闭登录界面
             J_FRAME.setVisible(false);
@@ -78,6 +74,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 }
                 super.mouseExited(e);
             }
+
         });
     }
     /**
@@ -94,6 +91,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
         });
     }
 
+    //注册界面
     @Override
     public void setRegistrationInterface() {
         RegistrationInterface.super.setRegistrationInterface();
@@ -101,6 +99,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
         R_J_LABEL2.setText("密 码:");
         R_J_LABEL3.setText("密 码:");
     }
+
     /**
      * 注册界面按钮(确认保存)
      */
@@ -117,7 +116,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 String passwordO = String.valueOf(password1);
                 String passwordT = String.valueOf(password2);
 
-                if (R_J_TEXT_FIELD1.getText().length() > LENGTH[0] && R_J_TEXT_FIELD1.getText().length() <= LENGTH[1] &&
+                int len = R_J_TEXT_FIELD1.getText().length();
+                if (len > LENGTH[0] && len <= LENGTH[1] &&
                         passwordO.length() >= LENGTH[1] && passwordO.length() <= LENGTH[2] &&
                         passwordO.equals(passwordT)) {
 
@@ -295,7 +295,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                     filters[i] = new FileNameExtensionFilter(formatName, extension);
                     fileChooser.setFileFilter(filters[i]);         //设置用户可以筛选图片格式jpg,png...
                 }
-
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 
@@ -321,25 +320,58 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 super.mouseExited(e);
             }
         });
-        //计数器
-
 
         /*
-         收件人文本框的监听重写
+         * 输入地址文本框监听效果
          */
-        J_TEXT_FIELD_One.addMouseListener(new MouseAdapter() {
+            J_TEXT_FIELD_One.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    J_TEXT_FIELD_One.setText("");
+                    super.mouseClicked(e);
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    int count = J_TEXT_FIELD_One.getText().length();
+                    if(count == 0) {
+                        try {
+                            Thread.sleep(120);    //等待0.12秒
+                            J_TEXT_FIELD_One.setText("输入地址");
+                        } catch (InterruptedException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
+                    //不做任何操作
+
+                }
+            });
+
+        /*
+         * 输入文件的监听效果
+         */
+        M_J_TEXT_FIELD_Two.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                M_J_TEXT_FIELD_Two.setText("");
                 super.mouseClicked(e);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
+                int count = M_J_TEXT_FIELD_Two.getText().length();    //计数器
+                if(count == 0){
+                    try {
+                        Thread.sleep(120);
+                        M_J_TEXT_FIELD_Two.setText("输入主题");
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
+                }
                 super.mouseExited(e);
             }
-
         });
-
         /*
          *插入按钮重写
          */
