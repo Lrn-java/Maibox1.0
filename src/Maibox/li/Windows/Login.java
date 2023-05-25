@@ -15,15 +15,16 @@ public interface Login {
     JLabel J_LABEL2 = new JLabel();
     JTextField J_TEXT_FIELD1 = new JTextField();
     JPasswordField J_PASSWORD_FIELD = new JPasswordField();
+    JPanel J_PANEL = new JPanel();
     Container CONTAINER = J_FRAME.getContentPane();
 
     /**
      *窗口
      */
     default void setJframe() {
-        ImageIcon imageIcon = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\登录界面图片.jpg");
+        ImageIcon imageIcon = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\img_1.png");
         JLabel jlabel = new JLabel(imageIcon);
-        jlabel.setBounds(0, 0, 695, 530);
+        jlabel.setBounds(0, 0, 402, 520);
         J_FRAME.getLayeredPane().add(jlabel,new Integer(Integer.MIN_VALUE));
         JPanel jpanel = (JPanel) J_FRAME.getContentPane();
 
@@ -33,21 +34,34 @@ public interface Login {
         J_FRAME.setResizable(false);
         J_FRAME.setVisible(true);
 
-        J_LABEL1.setBounds(205, 150, 150, 80);
+        J_PANEL.setBounds(400,0,300,520);
+        J_PANEL.setBackground(Color.white);
+        CONTAINER.add(J_PANEL);
+
+        //用户名提示标签
+        J_LABEL1.setBounds(420, 250, 150, 80);
         J_LABEL1.setFont(new Font("方正舒体",Font.BOLD, 18));
         J_LABEL1.setForeground(Color.BLACK);
+        J_PANEL.add(J_LABEL1);
         CONTAINER.add(J_LABEL1);
 
-        J_LABEL2.setBounds(205, 200, 150, 80);
+        //密码提示标签
+        J_LABEL2.setBounds(420, 290, 150, 80);
         J_LABEL2.setFont(new Font("方正舒体", Font.BOLD, 18));
         J_LABEL2.setForeground(Color.BLACK);
+        J_PANEL.add(J_LABEL2);
         CONTAINER.add(J_LABEL2);
 
-        J_TEXT_FIELD1.setBounds(270,175,100,25);
+        //用户名文本框
+        J_TEXT_FIELD1.setBounds(490,280,100,25);
+        J_PANEL.add(J_TEXT_FIELD1);
         CONTAINER.add(J_TEXT_FIELD1);
 
-        J_PASSWORD_FIELD.setBounds(270,225,100,25);
+        //密码框
+        J_PASSWORD_FIELD.setBounds(490,320,100,25);
         J_PASSWORD_FIELD.setEchoChar('*');
+        J_PANEL.add(J_PASSWORD_FIELD);
+        CONTAINER.add(J_PANEL);
         CONTAINER.add(J_PASSWORD_FIELD);
 
         jpanel.setOpaque(false);
@@ -58,13 +72,14 @@ public interface Login {
      */
     JButton SIGN_BUTTON = new JButton();
     JButton REGISTRATION_BUTTON = new JButton();
-
     /**
      * 登录按钮
      */
     default void setLoginButton(){
-        SIGN_BUTTON.setBounds(205, 280, 60, 30);
+        SIGN_BUTTON.setBounds(425, 360, 60, 30);
         SIGN_BUTTON.setText("登录");
+        J_PANEL.add(SIGN_BUTTON);
+        CONTAINER.add(J_PANEL);
         CONTAINER.add(SIGN_BUTTON);
     }
 
@@ -72,8 +87,10 @@ public interface Login {
      * 注册按钮
      */
     default void setEnrollButton(){
-        REGISTRATION_BUTTON.setBounds(310, 280, 60, 30);
+        REGISTRATION_BUTTON.setBounds(530, 360, 60, 30);
         REGISTRATION_BUTTON.setText("注册");
+        J_PANEL.add(REGISTRATION_BUTTON);
+        CONTAINER.add(J_PANEL);
         CONTAINER.add(REGISTRATION_BUTTON);
     }
 }

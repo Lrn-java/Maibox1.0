@@ -5,12 +5,12 @@ import Maibox.li.GetData.RegistrationInformation;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+import static java.lang.System.err;
 import static java.lang.System.out;
 
 /**
@@ -54,7 +54,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             J_FRAME.setVisible(false);
         });
     }
-
     /**
      * 搜索框的属性
      */
@@ -70,8 +69,10 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             @Override
             public void mouseExited(MouseEvent e) {
                 try {
-                    Thread.sleep(100);  //等待0.1秒
-                    M_J_TEXT_FIELD.setText("搜索");
+                    if(M_J_TEXT_FIELD.getText().length() == 0){
+                        Thread.sleep(120);          //等待0.12秒
+                        M_J_TEXT_FIELD.setText("🔍搜索");
+                    }
                 } catch (InterruptedException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -320,9 +321,27 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 super.mouseExited(e);
             }
         });
+        //计数器
+
 
         /*
-         *
+         收件人文本框的监听重写
+         */
+        J_TEXT_FIELD_One.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+            }
+
+        });
+
+        /*
+         *插入按钮重写
          */
         M_J_LABEL_FOUR.addMouseListener(new MouseAdapter() {
             @Override
@@ -340,6 +359,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 super.mouseExited(e);
             }
         });
+
         /*
          * 预览按钮,新窗口按钮按钮重写
          */

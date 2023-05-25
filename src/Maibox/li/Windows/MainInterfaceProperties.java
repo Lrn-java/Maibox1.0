@@ -220,12 +220,13 @@ public interface MainInterfaceProperties{
     }
     JPanel M_J_PANEL_TITLE_BAR = new JPanel();
     JTextField M_J_TEXT_FIELD = new JTextField();
+
     /**
      * 该方法是主界面标题栏
      */
     default void titleBar(){
-        M_J_TEXT_FIELD.setText("搜索");
-        M_J_TEXT_FIELD.setBounds(200,30,175,30);
+        M_J_TEXT_FIELD.setText("🔍搜索");
+        M_J_TEXT_FIELD.setBounds(240,30,200,30);
 
         M_J_PANEL_TITLE_BAR.add(M_J_TEXT_FIELD);
 
