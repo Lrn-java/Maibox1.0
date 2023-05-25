@@ -14,7 +14,7 @@ import static java.lang.System.out;
 public class LoginScreen implements Login,RegistrationInterface, RegistrationInformation,MainInterfaceProperties,Runnable{
 
 
-    int[] LENGTH = new int[]{0,6,16};
+    final int[] LENGTH = new int[]{0,6,16};
     public LoginScreen() {
         this.setJframe();
         this.setLoginButton();
