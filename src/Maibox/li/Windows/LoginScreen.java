@@ -3,23 +3,20 @@ package Maibox.li.Windows;
 import Maibox.li.GetData.RegistrationInformation;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.util.Locale;
-import java.util.function.LongUnaryOperator;
+import java.sql.Time;
 
 import static java.lang.System.out;
 
 /**
  * @author Lrn
  */
-public class LoginScreen implements Login,RegistrationInterface, RegistrationInformation,MainInterfaceProperties{
+public class LoginScreen implements Login,RegistrationInterface, RegistrationInformation,MainInterfaceProperties,Runnable{
 
 
     int[] LENGTH = new int[]{0,6,16};
@@ -52,9 +49,34 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             menuBarTwo();
             menuBarThree();
             setLines();
-
+            run();          //线程开启
             //登录成功后关闭登录界面
             J_FRAME.setVisible(false);
+        });
+    }
+
+    /**
+     * 搜索框的属性
+     */
+    @Override
+    public void run() {
+        M_J_TEXT_FIELD.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                M_J_TEXT_FIELD.setText("");
+                super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                try {
+                    Thread.sleep(100);  //等待0.1秒
+                    M_J_TEXT_FIELD.setText("搜索");
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+                super.mouseExited(e);
+            }
         });
     }
     /**
@@ -246,6 +268,11 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
 
+        /*
+         图片按钮
+         1.可以展示所有问价供用户选择
+         2.可以更精确的使用户选择想要的图片格式
+         */
         M_J_LABEL_THREE.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -258,13 +285,16 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 String[] Image_Format = new String[Image_Format_Name.length];
 
                 FileNameExtensionFilter[] filters = new FileNameExtensionFilter[Image_Format_Name.length];
+
+                //设置图片格式筛选
                 for (int i = 0; i < Image_Format_Name.length; i++) {
                     String formatName = Image_Format_Name[i];
                     String extension = formatName.toLowerCase();
                     Image_Format[i] = extension;
                     filters[i] = new FileNameExtensionFilter(formatName, extension);
-                    fileChooser.setFileFilter(filters[i]);
+                    fileChooser.setFileFilter(filters[i]);         //设置用户可以筛选图片格式jpg,png...
                 }
+
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 
@@ -274,6 +304,40 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 }
                 frame.pack();
                 super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                M_J_LABEL_THREE.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                M_J_LABEL_THREE.setFont(new Font("微软雅黑",Font.BOLD,15));
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                M_J_LABEL_THREE.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                M_J_LABEL_THREE.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                super.mouseExited(e);
+            }
+        });
+
+        /*
+         *
+         */
+        M_J_LABEL_FOUR.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
             }
         });
         /*
@@ -623,4 +687,5 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             }
         });
     }
+
 }

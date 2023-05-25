@@ -1,6 +1,5 @@
 package Maibox.li.Windows;
 
-import javax.print.DocFlavor;
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,7 +9,7 @@ import java.awt.*;
  * 邮箱界面属性
  */
 
-public interface MainInterfaceProperties {
+public interface MainInterfaceProperties{
     JFrame M_J_FRAME = new JFrame();
     JPanel M_J_PANEL = new JPanel();
     JLabel jLabel1 = new JLabel("新邮件");
@@ -41,6 +40,8 @@ public interface MainInterfaceProperties {
     JLabel M_J_LABEL_FIVE = new JLabel("表情");
 
     JLabel M_J_LABEL_SIX = new JLabel("格式");
+    JLabel M_J_LABEL_SEVEN = new JLabel("翻译");
+
 
     /**
      * 该方法的作用是主界面的属性
@@ -81,6 +82,10 @@ public interface MainInterfaceProperties {
         M_J_LABEL_SIX.setFont(new Font("微软雅黑",Font.PLAIN,15));
         M_J_PANEL.add(M_J_LABEL_SIX);
 
+        //翻译
+        M_J_LABEL_SEVEN.setBounds(630,170,50,30);
+        M_J_LABEL_SEVEN.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        M_J_PANEL.add(M_J_LABEL_SEVEN);
 
         //主界面
         M_J_FRAME.setSize(1920, 1080);
@@ -158,18 +163,18 @@ public interface MainInterfaceProperties {
         M_J_PANEL.add(SendSeparately_Button);
 
         //发送按钮
-        Send_JButton.setBounds(20,800,75,25);
+        Send_JButton.setBounds(20,825,75,25);
         M_J_PANEL.add(Send_JButton);
 
         //存草稿按钮
-        SaveTheDraft_JButton.setBounds(110,800,75,25);
+        SaveTheDraft_JButton.setBounds(110,825,75,25);
         M_J_PANEL.add(SaveTheDraft_JButton);
     }
 
     JLabel Lines_One = new JLabel();
     JLabel Lines_Two = new JLabel();
     JLabel Lines_Three = new JLabel();
-    JLabel Lines_Four = new JLabel();
+    JLabel   Lines_Four = new JLabel();
 
     /*
      * 该方法是线条方法
@@ -188,11 +193,15 @@ public interface MainInterfaceProperties {
         M_J_PANEL.add(Lines_Two);
 
         Lines_Three.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
-        //Lines_Three.setBounds();
+        Lines_Three.setBounds(20,205,1310,20);
+        Lines_Three.setBackground(new Color(155,255,255,0));
+        Lines_Three.setForeground(Color.GRAY);
         M_J_PANEL.add(Lines_Three);
 
         Lines_Four.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
-        //Lines_Four.setBounds();
+        Lines_Four.setBounds(20,260,1310,20);
+        Lines_Four.setBackground(new Color(155,255,255,0));
+        Lines_Four.setForeground(Color.GRAY);
         M_J_PANEL.add(Lines_Four);
     }
     JTextArea M_J_TEXT_AREA = new JTextArea();
@@ -206,14 +215,20 @@ public interface MainInterfaceProperties {
         M_J_TEXT_AREA.setRows(4);
         M_J_TEXT_AREA.setColumns(80);
 
-        M_J_SCROLL_PANE.setBounds(20, 220, 1350, 550);
+        M_J_SCROLL_PANE.setBounds(20, 270, 1350, 550);
         M_J_PANEL.add(M_J_SCROLL_PANE);
     }
     JPanel M_J_PANEL_TITLE_BAR = new JPanel();
+    JTextField M_J_TEXT_FIELD = new JTextField();
     /**
      * 该方法是主界面标题栏
      */
     default void titleBar(){
+        M_J_TEXT_FIELD.setText("搜索");
+        M_J_TEXT_FIELD.setBounds(200,30,175,30);
+
+        M_J_PANEL_TITLE_BAR.add(M_J_TEXT_FIELD);
+
         ImageIcon M_LOGO = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\Logo.jpg");
         JLabel logo = new JLabel(M_LOGO);
         logo.setBounds(10,20,175,50);
