@@ -50,6 +50,39 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             J_FRAME.setVisible(false);
         });
     }
+
+    /*
+    这个方法是一个输入正文的方法监听方法
+     */
+    @Override
+    public void titleBar() {
+        M_J_TEXT_AREA.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                M_J_TEXT_AREA.setText("");
+                super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //计数器
+                int count = M_J_TEXT_AREA.getText().length();
+                if(count == 0){
+                    try {
+                        //等待0.12秒
+                        Thread.sleep(120);
+                        M_J_TEXT_AREA.setText("输入正文");
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
+                }
+                super.mouseExited(e);
+            }
+        });
+        MainInterfaceProperties.super.titleBar();
+    }
+
     /**
      * 搜索框的属性
      */
