@@ -1,6 +1,9 @@
 package Maibox.li.Run;
 
 import Maibox.li.Windows.MainInterface;
+import com.sun.tools.javac.Main;
+
+import java.util.Random;
 
 import static java.lang.System.out;
 public class Run {

@@ -17,8 +17,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
     final int[] LENGTH = new int[]{0,6,16};
     public LoginScreen() {
         this.setJframe();
-        this.setLoginButton();
-        this.setEnrollButton();
+        this.setLoginButton();         //登录按钮
+        this.setEnrollButton();        //注册按钮
         this.confirmSave();
     }
     /**
@@ -30,25 +30,31 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
         J_LABEL1.setText("用户名");
         J_LABEL2.setText("密  码");
     }
+
+
     /**
      * 登录按钮
      */
     @Override
     public void setLoginButton() {
         Login.super.setLoginButton();
-        SIGN_BUTTON.addActionListener(e -> {
-            mainInterface();
-            textField();
-            titleBar();
-            menuBarOne();
-            menuBarTwo();
-            menuBarThree();
-            setLines();
+        SIGN_BUTTON.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                mainInterface();
+                textField();
+                titleBar();
+                menuBarOne();
+                menuBarTwo();
+                menuBarThree();
+                setLines();
 
-            run();          //线程开启
-            //登录成功后关闭登录界面
-            J_FRAME.setVisible(false);
+                run();    //线程开启
+                super.mouseClicked(e);
+                J_FRAME.setVisible(false);
+            }
         });
+            //登录成功后关闭登录界面
     }
 
     /*
@@ -110,16 +116,18 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
 
         });
     }
+
     /**
      * 注册按钮
      */
     @Override
     public void setEnrollButton() {
         Login.super.setEnrollButton();
-        REGISTRATION_BUTTON.addActionListener(new ActionListener() {
+        REGISTRATION_BUTTON.addMouseListener(new MouseAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 setRegistrationInterface();
+                super.mouseClicked(e);
             }
         });
     }
@@ -268,10 +276,33 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
         M_J_LABEL_TWO.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                JFrame frame = new JFrame();
+                JFrame jFrame = new JFrame("超大附件");
+                JPanel main_jPanel = new JPanel();
+                JPanel jPanel = new JPanel();
 
+                jFrame.setBounds(700,280,520,500);
+                jFrame.setForeground(Color.black);
+                jFrame.setLayout(null);
+                jFrame.setVisible(true);
+
+                //底色
+                main_jPanel.setBounds(0,0,520,500);
+                main_jPanel.setBackground(Color.white);
+                main_jPanel.setVisible(true);
+                //前景色
+                jPanel.setBounds(0,0,120,60);
+
+                jPanel.setVisible(true);
+                jPanel.setOpaque(true);
+                main_jPanel.add(jPanel);
+
+                //容器
+                Container container = jFrame.getContentPane();
+                JFrame frame = new JFrame();
+                container.add(main_jPanel);
                 // 创建文件选择器对象
-                JFileChooser fileChooser = new JFileChooser();
+                /*JFileChooser fileChooser = new JFileChooser();
+
 
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
@@ -284,7 +315,8 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 frame.setBounds(270,140,400,400);
                 frame.pack();
                 //frame.setVisible(true);
-                super.mouseClicked(e);
+                super.mouseClicked(e);*/
+                jPanel.setOpaque(true);
             }
 
             @Override

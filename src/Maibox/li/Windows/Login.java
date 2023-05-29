@@ -1,15 +1,14 @@
 package Maibox.li.Windows;
 
 import javax.swing.*;
+import javax.xml.crypto.dsig.SignatureMethod;
 import java.awt.*;
+import java.util.concurrent.Callable;
 
 /**
  * @author Lrn
  */
 public interface Login {
-    int[] USER_LEN = new int[]{8};
-    int[] PASSWROD_LEN = new int[]{6,16};
-
     JFrame J_FRAME = new JFrame();
     JLabel J_LABEL1 = new JLabel();
     JLabel J_LABEL2 = new JLabel();
@@ -26,7 +25,6 @@ public interface Login {
         JLabel jlabel = new JLabel(imageIcon);
         jlabel.setBounds(0, 0, 402, 520);
         J_FRAME.getLayeredPane().add(jlabel,new Integer(Integer.MIN_VALUE));
-        JPanel jpanel = (JPanel) J_FRAME.getContentPane();
 
         J_FRAME.setBounds(620,280,695,530);
         J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -34,7 +32,7 @@ public interface Login {
         J_FRAME.setResizable(false);
         J_FRAME.setVisible(true);
 
-        J_PANEL.setBounds(400,0,300,520);
+        J_PANEL.setBounds(400,0,293,520);
         J_PANEL.setBackground(Color.white);
         CONTAINER.add(J_PANEL);
 
@@ -63,6 +61,7 @@ public interface Login {
         J_PANEL.add(J_PASSWORD_FIELD);
         CONTAINER.add(J_PANEL);
         CONTAINER.add(J_PASSWORD_FIELD);
+        JPanel jpanel = (JPanel) J_FRAME.getContentPane();
 
         jpanel.setOpaque(false);
     }
@@ -80,10 +79,13 @@ public interface Login {
         SIGN_BUTTON.setBounds(425, 360, 60, 30);
         SIGN_BUTTON.setText("登录");
         J_PANEL.add(SIGN_BUTTON);
+
         CONTAINER.add(J_PANEL);
         CONTAINER.add(SIGN_BUTTON);
-    }
+        SIGN_BUTTON.requestFocus();
 
+
+    }
     /**
      * 注册按钮
      */
@@ -91,7 +93,10 @@ public interface Login {
         REGISTRATION_BUTTON.setBounds(530, 360, 60, 30);
         REGISTRATION_BUTTON.setText("注册");
         J_PANEL.add(REGISTRATION_BUTTON);
+
         CONTAINER.add(J_PANEL);
         CONTAINER.add(REGISTRATION_BUTTON);
+        REGISTRATION_BUTTON.requestFocus();
+
     }
 }
