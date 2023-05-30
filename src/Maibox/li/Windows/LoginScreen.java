@@ -278,8 +278,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             public void mouseClicked(MouseEvent e) {
                 JFrame jFrame = new JFrame("超大附件");
                 JPanel main_jPanel = new JPanel();
-                JPanel jPanel = new JPanel();
-
+                JScrollPane jScrollPane = new JScrollPane();
                 jFrame.setBounds(700,280,520,500);
                 jFrame.setForeground(Color.black);
                 jFrame.setLayout(null);
@@ -289,17 +288,11 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 main_jPanel.setBounds(0,0,520,500);
                 main_jPanel.setBackground(Color.white);
                 main_jPanel.setVisible(true);
-                //前景色
-                jPanel.setBounds(0,0,120,60);
-
-                jPanel.setVisible(true);
-                jPanel.setOpaque(true);
-                main_jPanel.add(jPanel);
 
                 //容器
                 Container container = jFrame.getContentPane();
-                JFrame frame = new JFrame();
                 container.add(main_jPanel);
+                 
                 // 创建文件选择器对象
                 /*JFileChooser fileChooser = new JFileChooser();
 
@@ -316,7 +309,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 frame.pack();
                 //frame.setVisible(true);
                 super.mouseClicked(e);*/
-                jPanel.setOpaque(true);
             }
 
             @Override
@@ -360,6 +352,7 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                     filters[i] = new FileNameExtensionFilter(formatName, extension);
                     fileChooser.setFileFilter(filters[i]);         //设置用户可以筛选图片格式jpg,png...
                 }
+
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
 

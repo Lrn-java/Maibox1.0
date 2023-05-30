@@ -1,10 +1,9 @@
 package Maibox.li.GetData;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.sql.*;
+import java.util.*;
+import java.util.concurrent.Executor;
 
 /**
  * @author 该接口用来读取用户信息
@@ -13,7 +12,7 @@ public interface RegistrationInformation {
 
     /**
      * @param user 该参数用来获取用户信息
-     * 获取信息
+     *             获取信息
      */
     default void getMassge(String user) {
 
@@ -37,17 +36,15 @@ public interface RegistrationInformation {
 
             bufferedWriter.write(user + "\n");
             bufferedWriter.flush();
-            
+
             fileWriter.close();
             bufferedWriter.close();
-            
+
 
             //刷新
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } 
+        }
     }
-
-
 
 }
