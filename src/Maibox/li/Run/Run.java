@@ -18,6 +18,5 @@ public class Run {
         out.println("程序总运行时间为:" + (end - start) + "毫秒");
         Message message = new Message();
         message.connect();
-
     }
 }
