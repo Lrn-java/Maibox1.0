@@ -46,7 +46,7 @@ public class Message implements RegistrationInformation {
             Class.forName("com.musql.jdbc.Driver");
             Connection con = DriverManager.getConnection(databaseURL,username,password);
 
-            DBConnector("root","758206lrnandlxnA","jdbc:mysql://localhost:3306/my_database?useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true");
+            DBConnector("root","758206lrnandlxnA","jdbc:mysql://10.201.11.37:3306/my_database?useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true");
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery("select * from usermessage");
 
@@ -65,5 +65,5 @@ public class Message implements RegistrationInformation {
             e.printStackTrace();
         }
     }
-    set
+
 }

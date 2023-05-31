@@ -16,10 +16,16 @@ public interface RegistrationInformation {
      */
     default void getMassge(String user) {
 
-        File file = new File("C:\\Users\\Lrn\\Desktop\\File数据库.txt");
+        String listing = new String("C:\\Users\\Lrn\\Desktop");
+        File file = new File(listing,"File数据库.txt");
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
+
+            if(!file.exists()){
+                file.mkdirs();
+            }
+
 
             fileWriter = new FileWriter(file, true);
             bufferedWriter = new BufferedWriter(fileWriter);
@@ -37,13 +43,25 @@ public interface RegistrationInformation {
             bufferedWriter.write(user + "\n");
             bufferedWriter.flush();
 
-            fileWriter.close();
-            bufferedWriter.close();
-
-
             //刷新
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }finally {
+            if(bufferedWriter == null){
+                try {
+                    bufferedWriter.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            if(fileWriter == null){
+                try {
+                    fileWriter.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 

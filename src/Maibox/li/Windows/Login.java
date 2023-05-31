@@ -1,5 +1,7 @@
 package Maibox.li.Windows;
 
+import com.sun.jdi.IntegerType;
+
 import javax.swing.*;
 import javax.xml.crypto.dsig.SignatureMethod;
 import java.awt.*;
@@ -24,7 +26,7 @@ public interface Login {
         ImageIcon imageIcon = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\img_1.png");
         JLabel jlabel = new JLabel(imageIcon);
         jlabel.setBounds(0, 0, 402, 520);
-        J_FRAME.getLayeredPane().add(jlabel,new Integer(Integer.MIN_VALUE));
+        J_FRAME.getLayeredPane().add(jlabel, Integer.MIN_VALUE);
 
         J_FRAME.setBounds(620,280,695,530);
         J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
