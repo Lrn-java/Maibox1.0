@@ -3,9 +3,6 @@ package Maibox.li.Message;
 import Maibox.li.GetData.RegistrationInformation;
 
 import java.sql.*;
-import java.util.ResourceBundle;
-import java.util.Scanner;
-
 import static java.lang.System.err;
 import static java.lang.System.out;
 
@@ -35,20 +32,26 @@ public class Message implements RegistrationInformation {
         this.username = username;
         this.password = pasword;
         this.databaseURL = databaseURL;
-
     }
 
+    private String USER = "user";
+    private String PASSWORD = "123456";
+
+    public void getUserMessage(){
+
+    }
     /**
      * 这个方法的作用是用来连接数据库的
      */
     public void connect(){
-        try {
-            Class.forName("com.musql.jdbc.Driver");
+        /*try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(databaseURL,username,password);
 
-            DBConnector("root","758206lrnandlxnA","jdbc:mysql://10.201.11.37:3306/my_database?useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true");
+            DBConnector(username,password,"jdbc:mysql://10.201.11.37:3306/user_message?useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true");
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery("select * from usermessage");
+            ResultSet ra = statement.executeQuery("insert into message values (USER,PASSWORD)");
 
             for(int i = 0;rs.next();i++){
                 out.println(rs.getString("user")+""+rs.getInt("password"));
@@ -63,7 +66,40 @@ public class Message implements RegistrationInformation {
             //当连接数据失败后提示用户
             err.println("连接数据库出错:"+e.getMessage());
             e.printStackTrace();
+        }*/
+
+        String driver="com.mysql.jdbc.Driver";
+        String user="root";
+        String password="758206lrnandlxnA";
+        String url="jdbc:mysql://10.201.11.37:3306/user_message";
+        try{
+            //加载数据库驱动
+            Class.forName(driver);
+            //连接数据库
+            Connection conn=DriverManager.getConnection(url,user,password);
+            System.out.println("连接成功!");
+            //创建Statement对象
+            Statement stmt=conn.createStatement();
+            //建立结果集
+            ResultSet rs=stmt.executeQuery("SELECT * FROM message");
+            System.out.println("查询成功!");
+            while(rs.next()) {
+                System.out.println(rs.getString(1)+" "+rs.getString("username"));
+            }
+            //关闭结果集
+            rs.close();
+            //关闭Statement对象
+            stmt.close();
+            //关闭数据库
+            conn.close();
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }catch(SQLException e) {
+            e.printStackTrace();
         }
     }
 
 }
+
+
+

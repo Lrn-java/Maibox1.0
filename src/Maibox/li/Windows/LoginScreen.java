@@ -11,7 +11,7 @@ import static java.lang.System.out;
 /**
  * @author Lrn
  */
-public class LoginScreen implements Login,RegistrationInterface, RegistrationInformation,MainInterfaceProperties,Runnable{
+public class LoginScreen implements Login,RegistrationInterface,RegistrationInformation,MainInterfaceProperties,Runnable{
 
 
     final int[] LENGTH = new int[]{0,6,16};
@@ -81,7 +81,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
-
                 }
                 super.mouseExited(e);
             }
@@ -113,7 +112,6 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 }
                 super.mouseExited(e);
             }
-
         });
     }
 
@@ -278,7 +276,10 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
             public void mouseClicked(MouseEvent e) {
                 JFrame jFrame = new JFrame("超大附件");
                 JPanel main_jPanel = new JPanel();
-                JScrollPane jScrollPane = new JScrollPane();
+
+                JPanel main_jPanel_one = new JPanel();
+                JPanel main_jPanel_two = new JPanel();
+
                 jFrame.setBounds(700,280,520,500);
                 jFrame.setForeground(Color.black);
                 jFrame.setLayout(null);
@@ -292,7 +293,17 @@ public class LoginScreen implements Login,RegistrationInterface, RegistrationInf
                 //容器
                 Container container = jFrame.getContentPane();
                 container.add(main_jPanel);
-                 
+
+                //面板一
+                main_jPanel_one.setBounds(30,60,300,260);
+                main_jPanel_one.setForeground(Color.gray);
+                main_jPanel_one.setVisible(true);
+
+                //面板二
+                main_jPanel_two.setBounds(30,60,300,260);
+                main_jPanel_two.setForeground(Color.gray);
+                main_jPanel_two.setVisible(true);
+
                 // 创建文件选择器对象
                 /*JFileChooser fileChooser = new JFileChooser();
 

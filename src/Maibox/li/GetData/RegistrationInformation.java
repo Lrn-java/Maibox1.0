@@ -22,6 +22,7 @@ public interface RegistrationInformation {
         BufferedWriter bufferedWriter = null;
         try {
 
+            //判断是否有此路径。创建路径
             if(!file.exists()){
                 file.mkdirs();
             }
@@ -36,32 +37,19 @@ public interface RegistrationInformation {
 
             /*预留问题
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-
             String line;
             */
 
             bufferedWriter.write(user + "\n");
+            //刷新
             bufferedWriter.flush();
 
-            //刷新
+            //关闭流
+            bufferedWriter.close();
+            fileWriter.close();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }finally {
-            if(bufferedWriter == null){
-                try {
-                    bufferedWriter.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-
-            if(fileWriter == null){
-                try {
-                    fileWriter.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
         }
     }
 

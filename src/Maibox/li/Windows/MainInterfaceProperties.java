@@ -247,7 +247,7 @@ public interface MainInterfaceProperties{
     /**
      * 四个组件:
      * M_J_PANEL_MENU_BAR_ONE:面板
-     * M_J_BUTTON_ONE:写邮件（JButton） .3333.
+     * M_J_BUTTON_ONE:写邮件（JButton）
      * M_J_BUTTON_THREE:通讯录(JButton)
      */
     JPanel M_J_PANEL_MENU_BAR_ONE = new JPanel();
