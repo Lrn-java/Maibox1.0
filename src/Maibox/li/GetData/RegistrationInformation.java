@@ -57,7 +57,7 @@ public interface RegistrationInformation {
                 InetAddress localhost = InetAddress.getLocalHost();
 
                 String userName = "root";
-                String password = "758206lrnandlnxA";
+                String password = "123456";
                 String databasesURL = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
                 String IP = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
                 out.println(IP);
@@ -67,7 +67,9 @@ public interface RegistrationInformation {
 
                 //创建连接
                 Connection connection = DriverManager.getConnection(userName,password,databasesURL);
-                String insertQuery = "insert into usermessage (user,password) values ()";
+
+                //获取的用户名和密码存入数据库中
+                String insertQuery = "insert into usermessage (user,password) values (user,name)";  
                 
             } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
@@ -81,18 +83,16 @@ public interface RegistrationInformation {
     }
 
     default void connection(String usermessage,String password){
-        if(user.equalse("")){
-            out.println();
-        }
-
-
-        //写入到user_message数据库中，这个数据库中有一个表，用来保存用户名和密码这些基本信息
-
+        if(!user.equalse("") && user != null){
+            //预留问题
+        }else{
+            //写入到user_message数据库中，这个数据库中有一个表，用来保存用户名和密码这些基本信息
         try {
 
                 //加载驱动
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
+                //获取本机IP...
                 InetAddress localhost = InetAddress.getLocalHost();
 
                 String userName = "root";
@@ -114,6 +114,6 @@ public interface RegistrationInformation {
             //抛出异常
             throw new RuntimeException(e);
         }
-
     }
+}
 }
