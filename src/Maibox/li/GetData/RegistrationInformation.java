@@ -31,12 +31,12 @@ public interface RegistrationInformation {
                 //获取本机IP...
                 InetAddress localhost = InetAddress.getLocalHost();
 
-                String userName = "root";
-                String password = "758206lrnandlnxA";
+                String mysql_user = "root";
+                String mysql_password = "758206lrnandlnxA";
                 String databasesURL = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
 
                 //创建连接
-                Connection connection = DriverManager.getConnection(userName,password,databasesURL);
+                Connection connection = DriverManager.getConnection(mysql_user,mysql_password,databasesURL);
                 String insertQuery = "insert into usermessage (user,password) values ()";
 
             } catch (ClassNotFoundException | SQLException e) {
@@ -45,8 +45,5 @@ public interface RegistrationInformation {
                 throw new RuntimeException(e);
             }
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
