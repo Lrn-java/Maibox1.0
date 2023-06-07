@@ -156,15 +156,21 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 String passwordT = String.valueOf(password2);
 
                 int len = R_J_TEXT_FIELD1.getText().length();
+
+                
+                /**
+                  *判断用户信息注册的长度是否合法，若合法则进行下一项
+                  *长度合法后就写入数据库中
+                  *写入数据库中时将所有的文本框内容都清空
+                  */
                 if (len > LENGTH[0] && len <= LENGTH[1] &&
                         passwordO.length() >= LENGTH[1] && passwordO.length() <= LENGTH[2] &&
                         passwordO.equals(passwordT)) {
 
-                        getMassge(R_J_TEXT_FIELD1.getText());    //写入文件
-                        getMassge(passwordT);
+                        getMessage(R_J_TEXT_FIELD1.getText(),passwordT);    
                         JOptionPane.showMessageDialog(null,"注册成功!","",JOptionPane.WARNING_MESSAGE);
 
-                        //清除用户信息
+                        //清除注册后文本框中所有信息
                         R_J_TEXT_FIELD1.setText("");
                         R_J_PASSWORD_FIELD1.setText("");
                         R_J_PASSWORD_FIELD2.setText("");
@@ -173,6 +179,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                     try {
                         String errorMessage = "用户信息无效！\n" +
                                 "用户名长度必须为 1-3 个字符,密码长度必须介于 6 到 16 个字符之间,两次密码必须一致!";
+                        //清空注册框中的密码信息
                         R_J_PASSWORD_FIELD1.setText("");
                         R_J_PASSWORD_FIELD2.setText("");
                         throw new UserNameMessageError(errorMessage);
@@ -566,7 +573,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
      * 这个方法是来自MainInterfaceProperties.java
      * 这个接口提供的第二菜单栏面板，这个面板中具有多个标签按钮，这些按钮都具有一些操作
      */
-
     public void menuBarTwo() {
         MainInterfaceProperties.super.menuBarTwo();
         ImportantContacts_JButton.addMouseListener(new MouseAdapter() {
