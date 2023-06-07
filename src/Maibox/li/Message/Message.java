@@ -3,8 +3,6 @@ package Maibox.li.Message;
 import Maibox.li.GetData.RegistrationInformation;
 
 import java.sql.*;
-import static java.lang.System.err;
-import static java.lang.System.out;
 
 /**
  * 该类的作用是连接数据库的作用，这个类最终要继承一个接口，
@@ -34,8 +32,8 @@ public class Message implements RegistrationInformation {
         this.databaseURL = databaseURL;
     }
 
-    private String USER = "user";
-    private String PASSWORD = "123456";
+    private String USER = "";
+    private String PASSWORD = "";
 
     public void getUserMessage(){
 
