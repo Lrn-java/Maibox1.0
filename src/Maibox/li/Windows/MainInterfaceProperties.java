@@ -174,7 +174,7 @@ public interface MainInterfaceProperties{
     JLabel Lines_One = new JLabel();
     JLabel Lines_Two = new JLabel();
     JLabel Lines_Three = new JLabel();
-    JLabel   Lines_Four = new JLabel();
+    JLabel  Lines_Four = new JLabel();
 
     /*
      * 该方法是线条方法

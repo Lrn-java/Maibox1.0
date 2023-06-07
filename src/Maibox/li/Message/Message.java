@@ -81,7 +81,7 @@ public class Message implements RegistrationInformation {
             //创建Statement对象
             Statement stmt=conn.createStatement();
             //建立结果集
-            ResultSet rs=stmt.executeQuery("SELECT * FROM message");
+            ResultSet rs=stmt.executeQuery("insert into message values (15,15)");
             System.out.println("查询成功!");
             while(rs.next()) {
                 System.out.println(rs.getString(1)+" "+rs.getString("username"));
