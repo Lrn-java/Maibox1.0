@@ -1,9 +1,14 @@
 package Maibox.li.GetData;
 
 import java.io.*;
-import java.sql.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.*;
-import java.util.concurrent.Executor;
+
+import static java.lang.System.out;
 
 /**
  * @author 该接口用来读取用户信息
@@ -31,7 +36,6 @@ public interface RegistrationInformation {
             fileWriter = new FileWriter(file, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             //使用集合类来保存值
-            Set set = new HashSet();
 
             FileReader fileReader = new FileReader("C:\\Users\\Lrn\\Desktop\\File数据库.txt");
 
@@ -48,9 +52,31 @@ public interface RegistrationInformation {
             bufferedWriter.close();
             fileWriter.close();
 
+            try {
+
+                InetAddress localhost = InetAddress.getLocalHost();
+
+                String userName = "root";
+                String password = "758206lrnandlnxA";
+                String databasesURL = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
+                String IP = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
+                out.println(IP);
+
+                //加载驱动
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
+                //创建连接
+                Connection connection = DriverManager.getConnection(userName,password,databasesURL);
+                String insertQuery = "insert into usermessage (user,password) values ()";
+
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+            } catch (UnknownHostException e) {
+                throw new RuntimeException(e);
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 }
