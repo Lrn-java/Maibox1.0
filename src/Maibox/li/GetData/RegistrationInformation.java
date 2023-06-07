@@ -81,7 +81,12 @@ public interface RegistrationInformation {
             throw new RuntimeException(e);
         }
     }
-
+    /**
+      *这个方法会连接到数据库，这个操作会将获取到的参数写入数据库中
+      *有两个参数，被调用后会将信息写入数据库
+      *usermessage：用户名
+      *password：密码
+      */
     default void connection(String usermessage,String password){
         if(!user.equalse("") && user != null){
             //预留问题
