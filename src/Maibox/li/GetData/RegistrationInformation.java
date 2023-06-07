@@ -68,7 +68,7 @@ public interface RegistrationInformation {
                 //创建连接
                 Connection connection = DriverManager.getConnection(userName,password,databasesURL);
                 String insertQuery = "insert into usermessage (user,password) values ()";
-
+                
             } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
             } catch (UnknownHostException e) {
@@ -78,5 +78,42 @@ public interface RegistrationInformation {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    default void connection(String usermessage,String password){
+        if(user.equalse("")){
+            out.println();
+        }
+
+
+        //写入到user_message数据库中，这个数据库中有一个表，用来保存用户名和密码这些基本信息
+
+        try {
+
+                //加载驱动
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
+                InetAddress localhost = InetAddress.getLocalHost();
+
+                String userName = "root";
+                String password = "758206lrnandlnxA";
+                String databasesURL = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
+                String IP = "jdbc:mysql://"+localhost.getHostAddress()+":3306/user_message";
+
+                //创建连接
+                Connection connection = DriverManager.getConnection(userName,password,databasesURL);
+                String insertQuery = "insert into usermessage (user,password) values ()";
+
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+            } catch (UnknownHostException e) {
+                throw new RuntimeException(e);
+            }
+
+        } catch (IOException e) {
+            //抛出异常
+            throw new RuntimeException(e);
+        }
+
     }
 }
