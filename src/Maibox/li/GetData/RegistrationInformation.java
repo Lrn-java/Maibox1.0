@@ -1,14 +1,10 @@
 package Maibox.li.GetData;
 
-import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.*;
-
-import static java.lang.System.out;
 
 /**
  * @author 该接口用来读取用户信息
