@@ -284,7 +284,10 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 JFrame jFrame = new JFrame();
 
                 //标签
-                JLabel jLabel = new JLabel();
+                JLabel jLabel_One = new JLabel();
+                jLabel_One.setText("添加超大附件");
+                jLabel_One.setBounds(50,5,130,20);
+                jLabel_One.setFont(new Font("微软雅黑",Font.PLAIN,16));
 
                 jFrame.setBounds(700, 280, 520, 500);
                 jFrame.getContentPane().setBackground(Color.WHITE);
@@ -293,6 +296,9 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 jFrame.setUndecorated(false);
                 jFrame.setVisible(true);
 
+                JLabel jLabel_Two = new JLabel();
+                jLabel_Two.setText("扩展后可上传10G大文件，获得2T超大存储空间");
+                jLabel_Two.setBounds(50,25,260,20);
                 //容器
                 Container container = jFrame.getContentPane();
                 //面板
@@ -302,8 +308,10 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 m_jPanel.setLayout(null);
                 m_jPanel.setBounds(0,0,520,500);
                 m_jPanel.setBackground(Color.white);
+                m_jPanel.add(jLabel_One);
+                m_jPanel.add(jLabel_Two);
 
-                s_jPanel.setBounds(50,50,400,400);
+                s_jPanel.setBounds(50,50,400,375);
                 s_jPanel.setBackground(new Color(0xFAFAFAFA, true));
                 s_jPanel.setLayout(null);
 
@@ -311,6 +319,26 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
 
                 container.add(m_jPanel);
 
+                JButton jButton_on = new JButton();
+                JButton jButton_open = new JButton();
+
+                jButton_on.setBounds(105,95,180,30);
+                jButton_on.setBackground(new Color(0x328FFA));
+                jButton_on.setForeground(new Color(0xFFFFFF));
+                jButton_on.setText("上传本地文件");
+                jButton_on.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                s_jPanel.add(jButton_on);
+
+                jButton_open.setBounds(105,225,180,30);
+                jButton_open.setBackground(new Color(0x328FFA));
+                jButton_open.setForeground(new Color(0xFFFFFF));
+                jButton_open.setText("从文件中转站中选择");
+                jButton_open.setFont(new Font("微软雅黑",Font.PLAIN,15));
+                s_jPanel.add(jButton_open);
+
+                JLabel jLabel = new JLabel("———————————————————————");
+                jLabel.setBounds(55,160,300,20);
+                s_jPanel.add(jLabel);
                 // 创建文件选择器对象
                 /*JFileChooser fileChooser = new JFileChooser();
 
@@ -327,7 +355,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 //frame.setVisible(true);
                 super.mouseClicked(e);*/
             }
-
             @Override
             public void mouseEntered(MouseEvent e) {
                 M_J_LABEL_TWO.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -418,7 +445,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                         }
                     }
                     //不做任何操作
-
                 }
             });
 

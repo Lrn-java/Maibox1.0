@@ -42,7 +42,6 @@ public interface RegistrationInformation {
             int rowsInserted = ps.executeUpdate();
             out.println("检测点4");
             if(rowsInserted > 0) {
-                out.println();
                 out.println("");
             }
             //抛出异常
