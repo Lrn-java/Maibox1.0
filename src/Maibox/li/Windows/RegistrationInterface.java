@@ -20,6 +20,7 @@ public interface RegistrationInterface {
     Container R_CONTAINER = R_J_FRAME.getContentPane();
 
     JButton J_BUTTON = new JButton();
+
     /**
      * 注册窗口属性
      */
