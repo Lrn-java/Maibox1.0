@@ -1,9 +1,15 @@
 package Maibox.li.Run;
 
+import Maibox.li.GetData.RegistrationInformation;
 import Maibox.li.Windows.MainInterface;
 import static java.lang.System.out;
 
-public class Run {
+public class Run implements RegistrationInformation {
+
+    @Override
+    public void getMassage(String usermessage, String password1) {
+        RegistrationInformation.super.getMassage(usermessage, password1);
+    }
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();

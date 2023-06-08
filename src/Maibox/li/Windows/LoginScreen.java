@@ -280,39 +280,39 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
         M_J_LABEL_TWO.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                JFrame jFrame = new JFrame("超大附件");
-                JPanel main_jPanel = new JPanel();
+                //窗体
+                JFrame jFrame = new JFrame();
 
-                JPanel main_jPanel_one = new JPanel();
-                JPanel main_jPanel_two = new JPanel();
+                //标签
+                JLabel jLabel = new JLabel();
 
-                jFrame.setBounds(700,280,520,500);
-                jFrame.setForeground(Color.black);
+                jFrame.setBounds(700, 280, 520, 500);
+                jFrame.getContentPane().setBackground(Color.WHITE);
                 jFrame.setLayout(null);
+                jFrame.setResizable(false);
+                jFrame.setUndecorated(false);
                 jFrame.setVisible(true);
-
-                //底色
-                main_jPanel.setBounds(0,0,520,500);
-                main_jPanel.setBackground(Color.white);
-                main_jPanel.setVisible(true);
 
                 //容器
                 Container container = jFrame.getContentPane();
-                container.add(main_jPanel);
+                //面板
+                JPanel main_jPanel_One = new JPanel();
+                //窗体中添加面板
+                main_jPanel_One.setBackground(new Color(250,250,250,250));
+                main_jPanel_One.setBounds(60, 60, 400, 350);
+                jFrame.add(main_jPanel_One);
+                container.add(main_jPanel_One);
 
-                //面板一
-                main_jPanel_one.setBounds(30,60,300,260);
-                main_jPanel_one.setForeground(Color.gray);
-                main_jPanel_one.setVisible(true);
-
-                //面板二
-                main_jPanel_two.setBounds(30,60,300,260);
-                main_jPanel_two.setForeground(Color.gray);
-                main_jPanel_two.setVisible(true);
+                container.add(jLabel);
+                jLabel.setName("添加超大附件");
+                jLabel.setBounds(30,30,50,50);
+                jLabel.setFont(new Font("微软雅黑",Font.BOLD,15));
+                main_jPanel_One.add(jFrame);
+                main_jPanel_One.add(jLabel);
+                container.add(jLabel);
 
                 // 创建文件选择器对象
                 /*JFileChooser fileChooser = new JFileChooser();
-
 
                 // 显示文件对话框并等待用户选择文件或目录
                 int result = fileChooser.showOpenDialog(frame);
