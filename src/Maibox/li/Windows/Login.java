@@ -81,10 +81,8 @@ public interface Login {
 
         CONTAINER.add(J_PANEL);
         CONTAINER.add(SIGN_BUTTON);
-        SIGN_BUTTON.requestFocus();
-        SIGN_BUTTON.requestFocus();
-        SIGN_BUTTON.requestFocus();
 
+        SIGN_BUTTON.requestFocus();
     }
     /**
      * 注册按钮
@@ -96,8 +94,6 @@ public interface Login {
 
         CONTAINER.add(J_PANEL);
         CONTAINER.add(REGISTRATION_BUTTON);
-        REGISTRATION_BUTTON.requestFocus();
-        REGISTRATION_BUTTON.requestFocus();
         REGISTRATION_BUTTON.requestFocus();
     }
 }
