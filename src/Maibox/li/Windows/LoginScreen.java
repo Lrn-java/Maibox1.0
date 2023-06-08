@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 import static java.lang.System.out;
 
+
 /**
  * @author Lrn
  */
@@ -38,7 +39,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
     @Override
     public void setLoginButton() {
         Login.super.setLoginButton();
-        SIGN_BUTTON.addMouseListener(new MouseAdapter() {
+        SIGN_BUTTON.addMouseListener(  new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 mainInterface();
@@ -156,8 +157,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 String passwordT = String.valueOf(password2);
 
                 int len = R_J_TEXT_FIELD1.getText().length();
-
-                
                 /**
                   *判断用户信息注册的长度是否合法，若合法则进行下一项
                   *长度合法后就写入数据库中
@@ -167,7 +166,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                         passwordO.length() >= LENGTH[1] && passwordO.length() <= LENGTH[2] &&
                         passwordO.equals(passwordT)) {
 
-                        getMessage(R_J_TEXT_FIELD1.getText(),passwordT);    
+                        getMassage(R_J_TEXT_FIELD1.getText(),passwordT);
                         JOptionPane.showMessageDialog(null,"注册成功!","",JOptionPane.WARNING_MESSAGE);
 
                         //清除注册后文本框中所有信息
