@@ -296,20 +296,20 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 //容器
                 Container container = jFrame.getContentPane();
                 //面板
-                JPanel main_jPanel_One = new JPanel();
-                //窗体中添加面板
-                main_jPanel_One.setBackground(new Color(250,250,250,250));
-                main_jPanel_One.setBounds(60, 60, 400, 350);
-                jFrame.add(main_jPanel_One);
-                container.add(main_jPanel_One);
+                JPanel m_jPanel = new JPanel();
+                JPanel s_jPanel = new JPanel();
 
-                container.add(jLabel);
-                jLabel.setName("添加超大附件");
-                jLabel.setBounds(30,30,50,50);
-                jLabel.setFont(new Font("微软雅黑",Font.BOLD,15));
-                main_jPanel_One.add(jFrame);
-                main_jPanel_One.add(jLabel);
-                container.add(jLabel);
+                m_jPanel.setLayout(null);
+                m_jPanel.setBounds(0,0,520,500);
+                m_jPanel.setBackground(Color.white);
+
+                s_jPanel.setBounds(50,50,400,400);
+                s_jPanel.setBackground(new Color(0xFAFAFAFA, true));
+                s_jPanel.setLayout(null);
+
+                m_jPanel.add(s_jPanel);
+
+                container.add(m_jPanel);
 
                 // 创建文件选择器对象
                 /*JFileChooser fileChooser = new JFileChooser();
