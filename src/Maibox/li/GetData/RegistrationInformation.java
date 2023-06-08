@@ -31,10 +31,9 @@ public interface RegistrationInformation {
 
             //创建连接
             Connection connection = DriverManager.getConnection(databasesURL,mysql_user,mysql_password);
-            Statement statement = connection.createStatement();
             //数据库的连接
             out.println("检测点1");
-            String insert = "insert into 'message' (user,u_message) values ('?', '?')";
+            String insert = "insert into 'message' (user,u_message) values (?, ?)";
             PreparedStatement ps = connection.prepareStatement(insert);
             out.println("检测点2");
             ps.setString(1, usermessage);
@@ -42,11 +41,11 @@ public interface RegistrationInformation {
             out.println("检测点3");
             int rowsInserted = ps.executeUpdate();
             out.println("检测点4");
-            if(rowsInserted > 0){
+            if(rowsInserted > 0) {
                 out.println();
                 out.println("");
             }
-
+            //抛出异常
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
