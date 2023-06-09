@@ -339,6 +339,14 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 JLabel jLabel = new JLabel("———————————————————————");
                 jLabel.setBounds(55,160,300,20);
                 s_jPanel.add(jLabel);
+
+                /**
+                 *预留思路
+                 * 需要在这里做两个功能
+                 * 添加超大文件按钮-点击这个按钮会直接打开磁盘管理器（所有文件都可查看）只有文件超过10G的才可被添加进去。
+                 * 从文件中转站中选择-点击这个按钮会直接打开文件中转站中保存的文件。
+                 */
+
                 // 创建文件选择器对象
                 /*JFileChooser fileChooser = new JFileChooser();
 
