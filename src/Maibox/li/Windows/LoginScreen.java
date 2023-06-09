@@ -340,6 +340,27 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 jLabel.setBounds(55,160,300,20);
                 s_jPanel.add(jLabel);
 
+                jButton_on.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        JFrame frame = new JFrame();
+                        frame.setBounds(300,500,300,300);
+
+                        // 创建文件选择器对象
+                        JFileChooser fileChooser = new JFileChooser();
+
+                        // 显示文件对话框并等待用户选择文件或目录
+                        int result = fileChooser.showOpenDialog(frame);
+
+                        // 如果用户选择了文件或目录，则打印选择的路径
+                        if (result == JFileChooser.APPROVE_OPTION) {
+                            out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                        }
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        super.mouseClicked(e);
+                        super.mouseClicked(e);
+                    }
+                });
                 /**
                  *预留思路
                  * 需要在这里做两个功能
@@ -348,20 +369,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                  */
 
                 // 创建文件选择器对象
-                /*JFileChooser fileChooser = new JFileChooser();
-
-                // 显示文件对话框并等待用户选择文件或目录
-                int result = fileChooser.showOpenDialog(frame);
-
-                // 如果用户选择了文件或目录，则打印选择的路径
-                if (result == JFileChooser.APPROVE_OPTION) {
-                    out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
-                }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setBounds(270,140,400,400);
-                frame.pack();
-                //frame.setVisible(true);
-                super.mouseClicked(e);*/
             }
             @Override
             public void mouseEntered(MouseEvent e) {
