@@ -1,11 +1,14 @@
 package Maibox.li.Windows;
 
 import Maibox.li.GetData.RegistrationInformation;
+import Maibox.li.Sidebar.LeftButton;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+
 import static java.lang.System.out;
 
 
@@ -21,6 +24,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
         this.setLoginButton();         //登录按钮
         this.setEnrollButton();        //注册按钮
         this.confirmSave();
+        this.getLeftButton();          //文件中转站的方法
     }
     /**
      * 登录界面方法
@@ -58,6 +62,12 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
             //登录成功后关闭登录界面
     }
 
+    /**
+     * 这个方法用来重写左侧按钮的所有监听
+     */
+    private void getLeftButton(){
+        new LeftButton().FileRelocation_JButton();
+    }
     /*
     这个方法是一个输入正文的方法监听方法
      */
@@ -340,6 +350,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                 jLabel.setBounds(55,160,300,20);
                 s_jPanel.add(jLabel);
 
+                //上传本地文件按钮监听事件
                 jButton_on.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
@@ -352,16 +363,30 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                         // 显示文件对话框并等待用户选择文件或目录
                         int result = fileChooser.showOpenDialog(frame);
 
-                        // 如果用户选择了文件或目录，则打印选择的路径
+                        //如果用户选择了文件，则将文件添加到面板中
                         if (result == JFileChooser.APPROVE_OPTION) {
-                            out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+                            File selectedFile = fileChooser.getSelectedFile();
+                            JLabel jLabel4 = new JLabel(selectedFile.getName());
+                            s_jPanel.add(jLabel4);
+                            s_jPanel.revalidate();
+                            s_jPanel.repaint();
                         }
+
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        super.mouseClicked(e);
                         super.mouseClicked(e);
                     }
                 });
-                /**
+
+                //从文件中转站点击按钮后触发的事件
+                jButton_open.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+
+                        super.mouseClicked(e);
+                    }
+                });
+
+                /*
                  *预留思路
                  * 需要在这里做两个功能
                  * 添加超大文件按钮-点击这个按钮会直接打开磁盘管理器（所有文件都可查看）只有文件超过10G的才可被添加进去。

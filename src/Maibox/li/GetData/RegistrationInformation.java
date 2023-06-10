@@ -27,7 +27,7 @@ public interface RegistrationInformation {
             //10.10.228.130
             String mysql_user = "root";
             String mysql_password = "*";
-            String databasesURL = "jdbc:mysql://*:3306/user_message";
+            String databasesURL = "jdbc:mysql://*.231:3306/user_message";
 
             //创建连接
             Connection connection = DriverManager.getConnection(databasesURL,mysql_user,mysql_password);
