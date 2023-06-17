@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
 public class LeftButton implements MainInterfaceProperties {
 
     /**
-     * 文件中转站点击后的事件
+     * 文件中转站的一个对象，这个类中可以有很多的属性，包括文件中转站的样式。和文件中转站的一些存储方式以及其他
      */
     public void FileRelocation_JButton(){
         FileRelocation_JButton.addMouseListener(new MouseAdapter() {
