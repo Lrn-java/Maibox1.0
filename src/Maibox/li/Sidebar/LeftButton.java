@@ -104,6 +104,19 @@ public class LeftButton implements MainInterfaceProperties {
             Delete.requestFocus();
         }
 
+        //类型标签坐标及风格
+        JLabel Type = new JLabel();
+        Type.setText("类型");
+        Type.setBounds(100,120,50,40);
+        Type.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        FileRelocationPanel.add(Type);
+
+        //文件名标签坐标及风格
+        JLabel Filename = new JLabel();
+        Filename.setText("文件名");
+        Filename.setBounds(130,120,50,40);
+        Filename.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        FileRelocationPanel.add(Filename);
     }
 
     /**
