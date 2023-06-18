@@ -170,7 +170,7 @@ public interface MainInterfaceProperties{
         SaveTheDraft_JButton.setBounds(110,825,75,25);
         M_J_PANEL.add(SaveTheDraft_JButton);
     }
-
+    //这是四个线条
     JLabel Lines_One = new JLabel();
     JLabel Lines_Two = new JLabel();
     JLabel Lines_Three = new JLabel();

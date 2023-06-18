@@ -14,6 +14,13 @@ public class LeftButton implements MainInterfaceProperties {
 
 
     private final JPanel FileRelocationPanel = new JPanel();
+    private final JTextField Search = new JTextField();
+
+    //四个按钮，分别是：发送，续期，下载，删除
+    private final JButton Send = new JButton();
+    private final JButton Renewal = new JButton();
+    private final JButton Download = new JButton();
+    private final JButton Delete = new JButton();
     /**
      * 文件中转站方法，这个方法中是文件中转站的方法
      */
@@ -39,15 +46,14 @@ public class LeftButton implements MainInterfaceProperties {
         JButton upload = new JButton("上传");
         upload.setBackground(new Color(0x328FFA));
         upload.setForeground(new Color(0xFFFFFF));
-        upload.setBounds(1050,30,70,30);
+        upload.setBounds(1050,27,70,30);
         upload.setFont(new Font("微软雅黑",Font.BOLD,15));
         FileRelocationPanel.add(upload);
 
         //设置文件中转站的搜索框
-        JTextField jTextField = new JTextField();
-        jTextField.setText("搜索");
-        jTextField.setBounds(1200,30,180,25);
-        FileRelocationPanel.add(jTextField);
+        Search.setText("🔍搜索");
+        Search.setBounds(1150,30,210,25);
+        FileRelocationPanel.add(Search);
 
         //设置一个淡蓝色的面板，这个面板中有一个选择框，四个按钮
         JPanel jPanel = new JPanel();
@@ -55,17 +61,14 @@ public class LeftButton implements MainInterfaceProperties {
         jPanel.setBackground(new Color(0xE3ECFA));
         FileRelocationPanel.add(jPanel);
 
-        //四个按钮，分别是：发送，续期，下载，删除
-        JButton Send = new JButton();
-        JButton Renewal = new JButton();
-        JButton Download = new JButton();
-        JButton Delete = new JButton();
+
 
         //发送按钮
         Send.setBounds(70,80,70,30);
         Send.setText("发送");
         Send.setBackground(new Color(0xFFFFFF));
         Send.setForeground(new Color(0x000000));
+        Send.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Send);
         //强制刷新10次
         for(int i = 0;i<5;i++){
@@ -77,6 +80,7 @@ public class LeftButton implements MainInterfaceProperties {
         Renewal.setText("续期");
         Renewal.setBackground(new Color(0xFFFFFF));
         Renewal.setForeground(new Color(0x000000));
+        Renewal.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Renewal);
         //强制刷新10此
         for(int i = 0;i<5;i++){
@@ -88,6 +92,7 @@ public class LeftButton implements MainInterfaceProperties {
         Download.setText("下载");
         Download.setBackground(new Color(0xFFFFFF));
         Download.setForeground(new Color(0x000000));
+        Download.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Download);
         for(int i = 0;i<5;i++){
             Download.requestFocus();
@@ -99,6 +104,7 @@ public class LeftButton implements MainInterfaceProperties {
         Delete.setText("删除");
         Delete.setBackground(new Color(0xFFFFFF));
         Delete.setForeground(new Color(0x000000));
+        Delete.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Delete);
         for(int i = 0;i<5;i++){
             Delete.requestFocus();
@@ -107,16 +113,48 @@ public class LeftButton implements MainInterfaceProperties {
         //类型标签坐标及风格
         JLabel Type = new JLabel();
         Type.setText("类型");
-        Type.setBounds(100,120,50,40);
+        Type.setBounds(70,120,50,40);
         Type.setFont(new Font("微软雅黑",Font.PLAIN,15));
         FileRelocationPanel.add(Type);
 
         //文件名标签坐标及风格
         JLabel Filename = new JLabel();
         Filename.setText("文件名");
-        Filename.setBounds(130,120,50,40);
+        Filename.setBounds(120,120,50,40);
         Filename.setFont(new Font("微软雅黑",Font.PLAIN,15));
         FileRelocationPanel.add(Filename);
+
+        JLabel Size = new JLabel();
+        Size.setText("大小");
+        Size.setBounds(920,120,50,40);
+        Size.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        FileRelocationPanel.add(Size);
+
+        //过期时间
+        JLabel ExpirationTime = new JLabel();
+        ExpirationTime.setText("过期时间");
+        ExpirationTime.setBounds(1020,120,80,40);
+        ExpirationTime.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        FileRelocationPanel.add(ExpirationTime);
+
+        //下载次数
+        JLabel NumberOfDownloads = new JLabel();
+        NumberOfDownloads.setText("下载次数");
+        NumberOfDownloads.setBounds(1150,120,80,40);
+        NumberOfDownloads.setFont(new Font("微软雅黑",Font.PLAIN,15));
+        FileRelocationPanel.add(NumberOfDownloads);
+
+        /*
+         * 这段代码是预留问题，也算预留思路，待完成
+         */
+        JLabel Lines_One = new JLabel();
+        JLabel Lines_Two = new JLabel();
+
+        Lines_One.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
+        Lines_One.setBounds(25,160,1345,20);
+        Lines_One.setBackground(new Color(255,255,255,0));
+        Lines_One.setForeground(Color.GRAY);
+        FileRelocationPanel.add(Lines_One);
     }
 
     /**
