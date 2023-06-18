@@ -7,25 +7,38 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import static java.lang.System.out;
+
+
 /**
  * 这个类是用来重写左侧按钮的类
  */
 public class LeftButton implements MainInterfaceProperties {
 
     /**
-     * 文件中转站的一个对象，这个类中可以有很多的属性，包括文件中转站的样式。和文件中转站的一些存储方式以及其他
+     * 文件中转站方法，这个方法中是文件中转站的方法
+     */
+    JPanel FileRelocationPanel = new JPanel();
+    private void setFileRelocation(){
+        FileRelocationPanel.setBounds(240,140,1394,870);
+        FileRelocationPanel.setBackground(Color.white);
+        FileRelocationPanel.setLayout(null);
+        M_CONTAINER.add(FileRelocationPanel);
+        //将面板置最顶层
+        M_CONTAINER.setComponentZOrder(FileRelocationPanel,0);
+        //刷新面板
+        M_J_FRAME.requestFocus();
+    }
+
+    /**
+     * 文件中转站方法
      */
     public void FileRelocation_JButton(){
         FileRelocation_JButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                JFrame jFrame = new JFrame();
-                jFrame.setBounds(500,500,300,500);
-                jFrame.setLayout(null);
-                jFrame.setVisible(true);
-
-                Container container = jFrame.getContentPane();
-
+                //调用中转站方法
+                setFileRelocation();
                 super.mouseClicked(e);
             }
         });

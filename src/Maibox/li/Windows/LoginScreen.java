@@ -24,7 +24,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
         this.setLoginButton();         //登录按钮
         this.setEnrollButton();        //注册按钮
         this.confirmSave();
-        this.getLeftButton();          //文件中转站的方法
+        this.getLeftButton();          //文件中转站
     }
     /**
      * 登录界面方法
