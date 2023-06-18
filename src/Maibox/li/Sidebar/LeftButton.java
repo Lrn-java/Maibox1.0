@@ -50,7 +50,10 @@ public class LeftButton implements MainInterfaceProperties {
         FileRelocationPanel.add(jTextField);
 
         //设置一个面板
-
+        JPanel jPanel = new JPanel();
+        jPanel.setBounds(50,1349,1349,50);
+        jPanel.setBackground(Color.blue);
+        FileRelocationPanel.add(jPanel);
     }
 
     /**

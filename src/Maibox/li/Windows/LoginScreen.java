@@ -18,7 +18,7 @@ import static java.lang.System.out;
 public class LoginScreen implements Login,RegistrationInterface,RegistrationInformation,MainInterfaceProperties,Runnable{
 
 
-    final int[] LONG = new int[]{0,6,16};
+    final int[] LEN = new int[]{0,6,16};
     public LoginScreen() {
         this.setJframe();
         this.setLoginButton();         //登录按钮
@@ -172,8 +172,8 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                   *长度合法后就写入数据库中
                   *写入数据库中时将所有的文本框内容都清空
                   */
-                if (len > LONG[0] && len <= LONG[1] &&
-                        passwordO.length() >= LONG[1] && passwordO.length() <= LONG[2] &&
+                if (len > LEN[0] && len <= LEN[1] &&
+                        passwordO.length() >= LEN[1] && passwordO.length() <= LEN[2] &&
                         passwordO.equals(passwordT)) {
 
                         getMassage(R_J_TEXT_FIELD1.getText(),passwordT);
