@@ -22,7 +22,8 @@ public interface Login {
         ImageIcon imageIcon = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\img_1.png");
         JLabel jlabel = new JLabel(imageIcon);
         jlabel.setBounds(0, 0, 402, 520);
-        J_FRAME.getLayeredPane().add(jlabel,Integer.MIN_VALUE);
+        Integer minValue = Integer.MIN_VALUE;
+        J_FRAME.getLayeredPane().add(jlabel,minValue);
 
         J_FRAME.setBounds(620,280,695,530);
         J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -84,7 +85,6 @@ public interface Login {
         for(int i = 0;i<5;i++){
             SIGN_BUTTON.requestFocus();
         }
-
     }
     /**
      * 注册按钮

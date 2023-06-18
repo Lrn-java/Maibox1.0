@@ -70,7 +70,7 @@ public class LeftButton implements MainInterfaceProperties {
         Send.setForeground(new Color(0x000000));
         Send.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Send);
-        //强制刷新10次
+        //强制重绘10次
         for(int i = 0;i<5;i++){
                 Send.requestFocus();
         }
@@ -82,7 +82,7 @@ public class LeftButton implements MainInterfaceProperties {
         Renewal.setForeground(new Color(0x000000));
         Renewal.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Renewal);
-        //强制刷新10此
+        //强制重绘10次
         for(int i = 0;i<5;i++){
             Renewal.requestFocus();
         }
@@ -94,6 +94,7 @@ public class LeftButton implements MainInterfaceProperties {
         Download.setForeground(new Color(0x000000));
         Download.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Download);
+        //强制重绘10次
         for(int i = 0;i<5;i++){
             Download.requestFocus();
         }
@@ -106,6 +107,7 @@ public class LeftButton implements MainInterfaceProperties {
         Delete.setForeground(new Color(0x000000));
         Delete.setFont(new Font("微软雅黑",Font.PLAIN,16));
         FileRelocationPanel.add(Delete);
+        //强制重绘10次
         for(int i = 0;i<5;i++){
             Delete.requestFocus();
         }

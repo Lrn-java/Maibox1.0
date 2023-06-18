@@ -28,7 +28,8 @@ public interface RegistrationInterface {
         ImageIcon imageIcon = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\注册界面.jpg");
         JLabel jlabel = new JLabel(imageIcon);
         jlabel.setBounds(0, 0, 695, 530);
-        R_J_FRAME.getLayeredPane().add(jlabel,Integer.MIN_VALUE);
+        Integer minValue = Integer.MIN_VALUE;
+        R_J_FRAME.getLayeredPane().add(jlabel,minValue);
         JPanel jpanel = (JPanel) R_J_FRAME.getContentPane();
 
         R_J_FRAME.setBounds(800, 390, 300, 300);
