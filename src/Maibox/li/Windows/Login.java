@@ -22,8 +22,7 @@ public interface Login {
         ImageIcon imageIcon = new ImageIcon("D:\\IDEA-Work\\Maibox1.0\\src\\LoginMaterial\\img_1.png");
         JLabel jlabel = new JLabel(imageIcon);
         jlabel.setBounds(0, 0, 402, 520);
-        Integer Integer = java.lang.Integer.MIN_VALUE;
-        J_FRAME.getLayeredPane().add(jlabel,new Integer(Integer.MIN_VALUE));
+        J_FRAME.getLayeredPane().add(jlabel,Integer.MIN_VALUE);
 
         J_FRAME.setBounds(620,280,695,530);
         J_FRAME.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

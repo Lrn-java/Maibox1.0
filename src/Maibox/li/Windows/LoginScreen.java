@@ -18,7 +18,7 @@ import static java.lang.System.out;
 public class LoginScreen implements Login,RegistrationInterface,RegistrationInformation,MainInterfaceProperties,Runnable{
 
 
-    final int[] LENGTH = new int[]{0,6,16};
+    final int[] LONG = new int[]{0,6,16};
     public LoginScreen() {
         this.setJframe();
         this.setLoginButton();         //登录按钮
@@ -172,8 +172,8 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                   *长度合法后就写入数据库中
                   *写入数据库中时将所有的文本框内容都清空
                   */
-                if (len > LENGTH[0] && len <= LENGTH[1] &&
-                        passwordO.length() >= LENGTH[1] && passwordO.length() <= LENGTH[2] &&
+                if (len > LONG[0] && len <= LONG[1] &&
+                        passwordO.length() >= LONG[1] && passwordO.length() <= LONG[2] &&
                         passwordO.equals(passwordT)) {
 
                         getMassage(R_J_TEXT_FIELD1.getText(),passwordT);
@@ -276,7 +276,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
 
                     // 如果用户选择了文件或目录，则打印选择的路径
                     if (result == JFileChooser.APPROVE_OPTION) {
-                        out.println("选择的路径：" + fileChooser.getSelectedFile().getAbsolutePath());
+
                     }
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     super.mouseClicked(e);
