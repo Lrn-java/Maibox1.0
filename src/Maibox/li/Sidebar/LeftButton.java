@@ -22,7 +22,7 @@ public class LeftButton implements MainInterfaceProperties {
         FileRelocationPanel.setBackground(Color.white);
         FileRelocationPanel.setLayout(null);
 
-        //移除文件发送面板
+        //先移除发送面板
         M_J_FRAME.remove(M_J_PANEL);
         Container CONTAINER = M_J_FRAME.getContentPane();
         CONTAINER.add(FileRelocationPanel,null);
@@ -39,7 +39,7 @@ public class LeftButton implements MainInterfaceProperties {
         JButton upload = new JButton("上传");
         upload.setBackground(new Color(0x328FFA));
         upload.setForeground(new Color(0xFFFFFF));
-        upload.setBounds(1050,30,70,25);
+        upload.setBounds(1050,30,70,30);
         upload.setFont(new Font("微软雅黑",Font.BOLD,15));
         FileRelocationPanel.add(upload);
 
@@ -49,11 +49,61 @@ public class LeftButton implements MainInterfaceProperties {
         jTextField.setBounds(1200,30,180,25);
         FileRelocationPanel.add(jTextField);
 
-        //设置一个面板
+        //设置一个淡蓝色的面板，这个面板中有一个选择框，四个按钮
         JPanel jPanel = new JPanel();
-        jPanel.setBounds(50,1349,1349,50);
-        jPanel.setBackground(Color.blue);
+        jPanel.setBounds(20,70,1360,50);
+        jPanel.setBackground(new Color(0xE3ECFA));
         FileRelocationPanel.add(jPanel);
+
+        //四个按钮，分别是：发送，续期，下载，删除
+        JButton Send = new JButton();
+        JButton Renewal = new JButton();
+        JButton Download = new JButton();
+        JButton Delete = new JButton();
+
+        //发送按钮
+        Send.setBounds(70,80,70,30);
+        Send.setText("发送");
+        Send.setBackground(new Color(0xFFFFFF));
+        Send.setForeground(new Color(0x000000));
+        FileRelocationPanel.add(Send);
+        //强制刷新10次
+        for(int i = 0;i<5;i++){
+                Send.requestFocus();
+        }
+
+        //续期按钮
+        Renewal.setBounds(150,80,70,30);
+        Renewal.setText("续期");
+        Renewal.setBackground(new Color(0xFFFFFF));
+        Renewal.setForeground(new Color(0x000000));
+        FileRelocationPanel.add(Renewal);
+        //强制刷新10此
+        for(int i = 0;i<5;i++){
+            Renewal.requestFocus();
+        }
+
+        //下载按钮
+        Download.setBounds(230,80,70,30);
+        Download.setText("下载");
+        Download.setBackground(new Color(0xFFFFFF));
+        Download.setForeground(new Color(0x000000));
+        FileRelocationPanel.add(Download);
+        for(int i = 0;i<5;i++){
+            Download.requestFocus();
+        }
+
+
+        //删除按钮
+        Delete.setBounds(310,80,70,30);
+        Delete.setText("删除");
+        Delete.setBackground(new Color(0xFFFFFF));
+        Delete.setForeground(new Color(0x000000));
+        FileRelocationPanel.add(Delete);
+        for(int i = 0;i<5;i++){
+            Delete.requestFocus();
+        }
+
     }
 
     /**
