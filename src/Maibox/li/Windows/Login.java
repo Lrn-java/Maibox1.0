@@ -64,13 +64,11 @@ public interface Login {
 
         jpanel.setOpaque(false);
     }
-
     /**
      * 登录与注册按钮
      */
     JButton SIGN_BUTTON = new JButton();
     JButton REGISTRATION_BUTTON = new JButton();
-
     /**
      * 登录按钮
      */

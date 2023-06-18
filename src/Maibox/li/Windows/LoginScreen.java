@@ -125,7 +125,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
             }
         });
     }
-
     /**
      * 注册按钮
      */
@@ -206,6 +205,12 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
     public void menuBarOne() {
         MainInterfaceProperties.super.menuBarOne();
         WriteAMessage_Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                menuBarOne();
+                super.mouseClicked(e);
+            }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 WriteAMessage_Button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
