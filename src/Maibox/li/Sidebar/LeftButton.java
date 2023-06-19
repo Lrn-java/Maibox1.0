@@ -158,7 +158,7 @@ public class LeftButton implements MainInterfaceProperties {
     }
 
     /**
-     * 当点击文件中转站后，重新绘制文件中转站面板
+     * 当点击文件中转站后，弹出文件中转站画面
      */
     public void FileRelocation_JButton(){
         FileRelocation_JButton.addMouseListener(new MouseAdapter() {
@@ -169,5 +169,16 @@ public class LeftButton implements MainInterfaceProperties {
                 super.mouseClicked(e);
             }
         });
+    }
+
+    /**
+     * 这个方法是移除文件中转站
+     */
+    protected void remove(){
+        M_J_FRAME.remove(FileRelocationPanel);
+        Container CONTAINER = M_J_FRAME.getContentPane();
+        CONTAINER.add(M_J_PANEL,null);
+        M_J_FRAME.revalidate();
+        M_J_FRAME.repaint();
     }
 }

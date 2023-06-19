@@ -15,6 +15,7 @@ public class UpperLeftPanel implements MainInterfaceProperties {
      */
     @Override
     public void mainInterface() {
+        new LeftButton().remove();
         MainInterfaceProperties.super.mainInterface();
     }
 
