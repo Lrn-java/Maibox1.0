@@ -10,13 +10,12 @@ import java.awt.event.MouseEvent;
  * 这个面板中有三个按钮点击后的所有属性
  */
 public class UpperLeftPanel implements MainInterfaceProperties {
-
-
     /**
      * 写邮件的方法
      */
-    public static void main(String[] args) {
-
+    @Override
+    public void mainInterface() {
+        MainInterfaceProperties.super.mainInterface();
     }
 
     /**
