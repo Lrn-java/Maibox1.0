@@ -3,7 +3,6 @@ package Maibox.li.Windows;
 import javax.swing.*;
 import java.awt.*;
 
-
 /**
  * @author Lrn
  * 邮箱界面属性

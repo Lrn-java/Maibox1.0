@@ -207,7 +207,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
         WriteAMessage_Button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                menuBarOne();
+                mainInterface();                 //点击写邮件后发生的操作
                 super.mouseClicked(e);
             }
 
@@ -264,7 +264,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
      * 这个方法是预览窗口
      */
     public void mainInterface() {
-
             //该方法是一个添加附件的按钮，这个按钮组件可以进行磁盘的读取，供用户添加附件
             MainInterfaceProperties.super.mainInterface();
             M_J_LABEL.addMouseListener(new MouseAdapter() {

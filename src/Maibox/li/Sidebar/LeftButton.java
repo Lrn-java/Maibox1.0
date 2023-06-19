@@ -13,18 +13,18 @@ import java.awt.event.MouseEvent;
 public class LeftButton implements MainInterfaceProperties {
 
 
-    private final JPanel FileRelocationPanel = new JPanel();
-    private final JTextField Search = new JTextField();
+    public final JPanel FileRelocationPanel = new JPanel();
+    public final JTextField Search = new JTextField();
 
     //四个按钮，分别是：发送，续期，下载，删除
-    private final JButton Send = new JButton();
-    private final JButton Renewal = new JButton();
-    private final JButton Download = new JButton();
-    private final JButton Delete = new JButton();
+    public final JButton Send = new JButton();
+    public final JButton Renewal = new JButton();
+    public final JButton Download = new JButton();
+    public final JButton Delete = new JButton();
     /**
      * 文件中转站方法，这个方法中是文件中转站的方法
      */
-    private void setFileRelocation() {
+    public void  setFileRelocation() {
         FileRelocationPanel.setBounds(240, 140, 1394, 870);
         FileRelocationPanel.setBackground(Color.white);
         FileRelocationPanel.setLayout(null);
@@ -60,8 +60,6 @@ public class LeftButton implements MainInterfaceProperties {
         jPanel.setBounds(20,70,1360,50);
         jPanel.setBackground(new Color(0xE3ECFA));
         FileRelocationPanel.add(jPanel);
-
-
 
         //发送按钮
         Send.setBounds(70,80,70,30);
