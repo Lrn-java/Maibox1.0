@@ -14,10 +14,4 @@ import static java.lang.System.out;
 //这个数据库连接继承了一个接口，这个接口中获取的值会被存放在数据库中
 public class Message {
 
-    /**
-     * username:这个成员变量是用来输入用户姓名的
-     * password；这个成员变量是用来输入用户登录密码的
-     * URL：它是一个连接数据库的地址
-     */
-
 }
