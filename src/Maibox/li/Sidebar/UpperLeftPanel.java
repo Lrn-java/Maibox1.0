@@ -1,7 +1,11 @@
 package Maibox.li.Sidebar;
 
+import Maibox.li.Run.Run;
 import Maibox.li.Windows.LoginScreen;
 import Maibox.li.Windows.MainInterfaceProperties;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -10,14 +14,6 @@ import java.awt.event.MouseEvent;
  * 这个面板中有三个按钮点击后的所有属性
  */
 public class UpperLeftPanel implements MainInterfaceProperties {
-    /**
-     * 写邮件的方法
-     */
-    @Override
-    public void mainInterface() {
-        new LeftButton().remove();
-        MainInterfaceProperties.super.mainInterface();
-    }
 
     /**
      * 这个方法是点击写0邮件按钮所执行的操作
@@ -26,10 +22,11 @@ public class UpperLeftPanel implements MainInterfaceProperties {
         WriteAMessage_Button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                mainInterface();           //主面板按钮的作用
+                new LeftButton().remove();
+                //mainInterface();            //主面板按钮的作用
                 /*LoginScreen LoginScreen = new LoginScreen();
                 LoginScreen.mainInterface();*/
-                menuBarOne();
+                /**/menuBarOne();
                 menuBarTwo();
                 menuBarThree();
                 setLines();
