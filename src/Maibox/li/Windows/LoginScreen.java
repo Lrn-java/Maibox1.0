@@ -63,10 +63,13 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
     }
 
     /**
-     * 这个方法用来重写左侧按钮的所有监听
+     * 文件中转站的所有组件，以及一些组件的监听效果
      */
     private void getLeftButton(){
+        //文件中转站面板的操作
         new LeftButton().FileRelocation_JButton();
+        //文件中转站的上传按钮操作
+        new LeftButton().setUpload();
     }
     /*
     这个方法是一个输入正文的方法监听方法

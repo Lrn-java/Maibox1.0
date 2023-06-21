@@ -16,12 +16,13 @@ public class LeftButton implements MainInterfaceProperties {
 
 
     public  JPanel FileRelocationPanel = new JPanel();
+    //搜索框
     public  JTextField Search = new JTextField();
     //上传按钮
     public JButton upload = new JButton("上传");
 
     //设置文件中转站标签的属性及样式最终添加到面板中
-    JLabel FileRelocation = new JLabel("文件中转站·1");
+    private final JLabel FileRelocation = new JLabel("文件中转站·1");
 
     //四个按钮，分别是：发送，续期，下载，删除
     public  JButton Send = new JButton();
@@ -204,7 +205,9 @@ public class LeftButton implements MainInterfaceProperties {
     }
 
     /**
-     * 点击上传按钮的操作
+     * 1.来源位置：文件中转站面板中
+     * 2.按钮名：上传
+     * 3.按钮监听操作：点击这个按钮后会获取用户磁盘，并弹出对话框，供用户选择
      */
     public void setUpload(){
         upload.addMouseListener(new MouseAdapter() {
@@ -224,6 +227,32 @@ public class LeftButton implements MainInterfaceProperties {
                 }
                 jFrame.pack();
                 super.mouseClicked(e);
+            }
+        });
+    }
+
+    /**
+     * 文件中转站搜索框样式
+     */
+    private void setSearch(){
+        Search.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Search.setText("");
+                super.mouseClicked(e);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if(Search.getText().length() == 0){
+                    try {
+                        Thread.sleep(120);
+                        Search.setText("搜索");   //等待0.12秒
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+                super.mouseExited(e);
             }
         });
     }
