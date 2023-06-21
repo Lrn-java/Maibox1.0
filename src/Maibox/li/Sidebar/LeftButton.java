@@ -2,10 +2,12 @@ package Maibox.li.Sidebar;
 
 import Maibox.li.Windows.MainInterfaceProperties;
 
+import static java.lang.System.out;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 /**
  * 这个类是用来重写左侧按钮的类
@@ -13,18 +15,23 @@ import java.awt.event.MouseEvent;
 public class LeftButton implements MainInterfaceProperties {
 
 
-    public final JPanel FileRelocationPanel = new JPanel();
-    public final JTextField Search = new JTextField();
+    public  JPanel FileRelocationPanel = new JPanel();
+    public  JTextField Search = new JTextField();
+    //上传按钮
+    public JButton upload = new JButton("上传");
+
+    //设置文件中转站标签的属性及样式最终添加到面板中
+    JLabel FileRelocation = new JLabel("文件中转站·1");
 
     //四个按钮，分别是：发送，续期，下载，删除
-    public final JButton Send = new JButton();
-    public final JButton Renewal = new JButton();
-    public final JButton Download = new JButton();
-    public final JButton Delete = new JButton();
+    public  JButton Send = new JButton();
+    public  JButton Renewal = new JButton();
+    public  JButton Download = new JButton();
+    public  JButton Delete = new JButton();
     /**
      * 文件中转站方法，这个方法中是文件中转站的方法
      */
-    public void  setFileRelocation() {
+    public void setFileRelocation() {
         FileRelocationPanel.setBounds(240, 140, 1394, 870);
         FileRelocationPanel.setBackground(Color.white);
         FileRelocationPanel.setLayout(null);
@@ -36,14 +43,13 @@ public class LeftButton implements MainInterfaceProperties {
         M_J_FRAME.revalidate();
         M_J_FRAME.repaint();
 
-        //设置文件中转站标签的属性及样式最终添加到面板中
-        JLabel FileRelocation = new JLabel("文件中转站·1");
+
         FileRelocation.setBounds(20,10,130,30);
         FileRelocation.setFont(new Font("微软雅黑",Font.BOLD,18));
         FileRelocationPanel.add(FileRelocation);
 
         //设置上传按钮属性及样式
-        JButton upload = new JButton("上传");
+
         upload.setBackground(new Color(0x328FFA));
         upload.setForeground(new Color(0xFFFFFF));
         upload.setBounds(1050,27,70,30);
@@ -155,6 +161,12 @@ public class LeftButton implements MainInterfaceProperties {
         Lines_One.setBackground(new Color(255,255,255,0));
         Lines_One.setForeground(Color.GRAY);
         FileRelocationPanel.add(Lines_One);
+
+        Lines_One.setText("———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————");
+        Lines_One.setBounds(25,200,1345,20);
+        Lines_One.setBackground(new Color(255,255,255,0));
+        Lines_One.setForeground(Color.GRAY);
+        FileRelocationPanel.add(Lines_One);
     }
 
     /**
@@ -172,13 +184,47 @@ public class LeftButton implements MainInterfaceProperties {
     }
 
     /**
-     * 这个方法是移除文件中转站
+     * 这个方法是用来移除文件中转站面板
      */
-    protected void remove(){
+    public void remove(){
+        //创建新面板
+        JPanel jPanel = new JPanel();
+        jPanel.setLayout(null);
+        jPanel.setBounds(240, 140, 1394, 870);
+
+        //删除文件中转站，并绘制新面板
         M_J_FRAME.remove(FileRelocationPanel);
         Container CONTAINER = M_J_FRAME.getContentPane();
-        CONTAINER.add(M_J_PANEL,null);
+        CONTAINER.add(jPanel,null);
+
+        //重新获取
         M_J_FRAME.revalidate();
+        //绘制新面板
         M_J_FRAME.repaint();
+    }
+
+    /**
+     * 点击上传按钮的操作
+     */
+    public void setUpload(){
+        upload.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //窗体
+                final JFrame jFrame = new JFrame();
+
+                jFrame.setBounds(300,500,300,300);
+                JFileChooser fileChooser = new JFileChooser();
+
+                int result = fileChooser.showOpenDialog(jFrame);
+
+                //如果用户选择了文件，将文件添加到面板中
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    out.println("选择的路径:"+fileChooser.getSelectedFile().getAbsolutePath());
+                }
+                jFrame.pack();
+                super.mouseClicked(e);
+            }
+        });
     }
 }
