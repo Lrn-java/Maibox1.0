@@ -7,12 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
 
 /**
- * 这个类是用来重写左侧按钮的类
+ * 这个类是文件中转站属性
  */
-public class LeftButton implements MainInterfaceProperties {
+public class FileRelovationPanel implements MainInterfaceProperties {
 
 
     public  JPanel FileRelocationPanel = new JPanel();
@@ -37,7 +36,7 @@ public class LeftButton implements MainInterfaceProperties {
         FileRelocationPanel.setBackground(Color.white);
         FileRelocationPanel.setLayout(null);
 
-        //先移除发送面板
+        //先移除面板
         M_J_FRAME.remove(M_J_PANEL);
         Container CONTAINER = M_J_FRAME.getContentPane();
         CONTAINER.add(FileRelocationPanel,null);
@@ -168,6 +167,8 @@ public class LeftButton implements MainInterfaceProperties {
         Lines_One.setBackground(new Color(255,255,255,0));
         Lines_One.setForeground(Color.GRAY);
         FileRelocationPanel.add(Lines_One);
+        setSearch();
+        setUpload();
     }
 
     /**
@@ -225,6 +226,7 @@ public class LeftButton implements MainInterfaceProperties {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     out.println("选择的路径:"+fileChooser.getSelectedFile().getAbsolutePath());
                 }
+
                 jFrame.pack();
                 super.mouseClicked(e);
             }
@@ -247,7 +249,7 @@ public class LeftButton implements MainInterfaceProperties {
                 if(Search.getText().length() == 0){
                     try {
                         Thread.sleep(120);
-                        Search.setText("搜索");   //等待0.12秒
+                        Search.setText("🔍搜索");   //等待0.12秒
                     } catch (InterruptedException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -256,4 +258,5 @@ public class LeftButton implements MainInterfaceProperties {
             }
         });
     }
+
 }

@@ -41,7 +41,7 @@ public class UpperLeftPanel implements MainInterfaceProperties {
         WriteAMessage_Button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                new LeftButton().remove();
+                new FileRelovationPanel().remove();
                 setWriteAMessage();           //调用本地方法
                 //mainInterface();            //主面板按钮的作用
                 /*LoginScreen LoginScreen = new LoginScreen();

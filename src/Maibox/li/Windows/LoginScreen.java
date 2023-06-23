@@ -1,7 +1,7 @@
 package Maibox.li.Windows;
 
 import Maibox.li.GetData.RegistrationInformation;
-import Maibox.li.Sidebar.LeftButton;
+import Maibox.li.Sidebar.FileRelovationPanel;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -67,9 +67,7 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
      */
     private void getLeftButton(){
         //文件中转站面板的操作
-        new LeftButton().FileRelocation_JButton();
-        //文件中转站的上传按钮操作
-        new LeftButton().setUpload();
+        new FileRelovationPanel().FileRelocation_JButton();
     }
     /*
     这个方法是一个输入正文的方法监听方法
