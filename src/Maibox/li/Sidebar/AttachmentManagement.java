@@ -19,5 +19,8 @@ public class AttachmentManagement extends FileRelovationPanel{
 
         //先删除面板
         M_J_FRAME.remove(FileRelocationPanel);
+        Container CONTAINER = M_J_FRAME.getContentPane();
+        CONTAINER.add(AttachmentManagement,null);
+        M_J_FRAME.revalidate();
     }
 }

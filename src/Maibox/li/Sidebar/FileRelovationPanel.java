@@ -5,8 +5,10 @@ import Maibox.li.Windows.MainInterfaceProperties;
 import static java.lang.System.out;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 /**
  * 这个类是文件中转站属性
@@ -167,8 +169,9 @@ public class FileRelovationPanel implements MainInterfaceProperties {
         Lines_One.setBackground(new Color(255,255,255,0));
         Lines_One.setForeground(Color.GRAY);
         FileRelocationPanel.add(Lines_One);
-        setSearch();
+
         setUpload();
+        setSearch();
     }
 
     /**
@@ -178,11 +181,11 @@ public class FileRelovationPanel implements MainInterfaceProperties {
         FileRelocation_JButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //调用文件中转站方法
                 setFileRelocation();
                 super.mouseClicked(e);
             }
         });
+
     }
 
     /**
@@ -200,8 +203,7 @@ public class FileRelovationPanel implements MainInterfaceProperties {
         CONTAINER.add(jPanel,null);
 
         //重新获取
-        M_J_FRAME.revalidate();
-        //绘制新面板
+        M_J_FRAME.revalidate();//绘制新面板
         M_J_FRAME.repaint();
     }
 
@@ -226,7 +228,7 @@ public class FileRelovationPanel implements MainInterfaceProperties {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     out.println("选择的路径:"+fileChooser.getSelectedFile().getAbsolutePath());
                 }
-
+                jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 jFrame.pack();
                 super.mouseClicked(e);
             }
@@ -236,7 +238,7 @@ public class FileRelovationPanel implements MainInterfaceProperties {
     /**
      * 文件中转站搜索框样式
      */
-    private void setSearch(){
+    public void setSearch(){
         Search.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

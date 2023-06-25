@@ -287,7 +287,6 @@ public class LoginScreen implements Login,RegistrationInterface,RegistrationInfo
                     super.mouseClicked(e);
                 }
             });
-
         /*
          该按钮是一个<超大附件>按钮:
          1.当用户点击超大附件按钮时会弹出一个自己磁盘的列表。可供用户选择。
