@@ -50,12 +50,12 @@ public interface Login {
         CONTAINER.add(J_LABEL2);
 
         //用户名文本框
-        J_TEXT_FIELD1.setBounds(490,280,100,25);
+        J_TEXT_FIELD1.setBounds(490,280,150,25);
         J_PANEL.add(J_TEXT_FIELD1);
         CONTAINER.add(J_TEXT_FIELD1);
 
         //密码框
-        J_PASSWORD_FIELD.setBounds(490,320,100,25);
+        J_PASSWORD_FIELD.setBounds(490,320,150,25);
         J_PASSWORD_FIELD.setEchoChar('*');
         J_PANEL.add(J_PASSWORD_FIELD);
         CONTAINER.add(J_PANEL);
