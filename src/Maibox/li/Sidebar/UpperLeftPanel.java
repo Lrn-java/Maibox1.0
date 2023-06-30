@@ -15,11 +15,11 @@ import java.awt.event.MouseEvent;
  */
 public class UpperLeftPanel implements MainInterfaceProperties {
 
-    public final JPanel WriteAMessage = new JPanel();
-    public final JFrame jFrame = new JFrame();
+    private final JPanel WriteAMessage = new JPanel();
+    private final JFrame jFrame = new JFrame();
 
-    public final JPanel jPanel = new JPanel();
-    public JLabel jLabel = new JLabel();
+    private final JPanel jPanel = new JPanel();
+    private final JLabel jLabel = new JLabel();
 
 
     /**

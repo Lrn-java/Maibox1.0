@@ -26,7 +26,7 @@ public interface RegistrationInformation {
 
             //10.10.228.130
             String mysql_user = "root";
-            String mysql_password = "*";
+            String mysql_password = "";
             String databasesURL = "jdbc:mysql://*:3306/user_message";
 
             //创建连接

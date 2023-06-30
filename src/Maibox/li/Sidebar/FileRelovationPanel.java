@@ -16,20 +16,20 @@ import java.io.File;
 public class FileRelovationPanel implements MainInterfaceProperties {
 
 
-    public  JPanel FileRelocationPanel = new JPanel();
+    private final JPanel FileRelocationPanel = new JPanel();
     //搜索框
-    public  JTextField Search = new JTextField();
+    private final JTextField Search = new JTextField();
     //上传按钮
-    public JButton upload = new JButton("上传");
+    private final JButton upload = new JButton("上传");
 
     //设置文件中转站标签的属性及样式最终添加到面板中
     private final JLabel FileRelocation = new JLabel("文件中转站·1");
 
     //四个按钮，分别是：发送，续期，下载，删除
-    public  JButton Send = new JButton();
-    public  JButton Renewal = new JButton();
-    public  JButton Download = new JButton();
-    public  JButton Delete = new JButton();
+    private final JButton Send = new JButton();
+    private final JButton Renewal = new JButton();
+    private final  JButton Download = new JButton();
+    private final  JButton Delete = new JButton();
     /**
      * 文件中转站方法，这个方法中是文件中转站的方法
      */

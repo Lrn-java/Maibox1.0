@@ -15,11 +15,12 @@ import static java.lang.System.out;
 public class Run implements RegistrationInformation, Login {
     private final String[] user = new String[]{"电","子","与","信","息","工","程","学","院"};
     private static final String[] password = new String[]{"d","z","y","x","x","g","c","x","y","2","0","2","2","0","2"};
-    private static int currentIndex;
-    private static int pacurrentIndex;
+    public  int currentIndex;
+    public static int pacurrentIndex;
     private static final Timer t = new Timer();
     public Run(){
         new MainInterface();
+        //这里可以用0作为记录索引位置的数
         currentIndex = 0;
         t.schedule(new TimerTask() {
             @Override
@@ -34,6 +35,9 @@ public class Run implements RegistrationInformation, Login {
         }, 1000, 1000);
 
     }
+    /**
+     * 这个方法中重写了一个方法，重写的方法访问局部变量的权限必须为静态的
+     */
     public static void run(){
         pacurrentIndex = 0;
         t.schedule(new TimerTask() {
