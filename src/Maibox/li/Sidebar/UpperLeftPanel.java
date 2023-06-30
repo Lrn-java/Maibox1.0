@@ -15,9 +15,15 @@ import java.awt.event.MouseEvent;
  */
 public class UpperLeftPanel implements MainInterfaceProperties {
 
-    JPanel WriteAMessage = new JPanel();
+    public final JPanel WriteAMessage = new JPanel();
+    public final JFrame jFrame = new JFrame();
+
+    public final JPanel jPanel = new JPanel();
+    public JLabel jLabel = new JLabel();
+
+
     /**
-     * 这个是用来设置写邮件按钮执行的操作
+     * 这个方法是用来写邮件面板执行的操作
      */
     public void setWriteAMessage(){
         WriteAMessage.setBounds(240, 140, 1394, 870);
@@ -31,11 +37,31 @@ public class UpperLeftPanel implements MainInterfaceProperties {
 
         M_J_FRAME.revalidate();
         M_J_FRAME.repaint();
+
+        //设置窗体大小
+        jFrame.setBounds(240, 140, 1394, 870);
+        jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        jFrame.setVisible(true);
+
+        jPanel.setBounds(240, 140, 1394, 870);
+        jPanel.setLayout(null);
+
+        //添加面板
+        M_CONTAINER.add(jPanel);
+        M_CONTAINER.add(jLabel);
+    }
+
+    /**
+     *重写这个写邮件按钮的方法
+     */
+    @Override
+    public void mainInterface() {
+        MainInterfaceProperties.super.mainInterface();
     }
 
 
     /**
-     * 这个方法是点击写0邮件按钮所执行的操作
+     * 这个方法是写邮件按钮执行的操作
      */
     public void WriteAMessage(){
         WriteAMessage_Button.addMouseListener(new MouseAdapter() {
