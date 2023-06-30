@@ -46,7 +46,9 @@ public interface RegistrationInformation {
             }
             //抛出异常
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(
+
+            );
         }
     }
 
