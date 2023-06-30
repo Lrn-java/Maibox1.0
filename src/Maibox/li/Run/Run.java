@@ -50,33 +50,10 @@ public class Run implements RegistrationInformation, Login {
     }
 
     public static void main(String[] args) {
-        /*long start = System.currentTimeMillis();
-        int i = 1;
-        try {
-            new Run();
-            Thread.sleep(10000);
-            Timer timer = new Timer();
-            timer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    Run.run();
-                }
-            }, 10000, 10000);
-
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-
-                }
-            }, 10000); // 延迟10秒执行
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-
-        }
-
-        //new MainInterface();
+        long start = System.currentTimeMillis();
+        new MainInterface();
         long end = System.currentTimeMillis();
-        out.println("程序总运行时间为:" + (end - start) + "毫秒");*/
+        out.println("程序总运行时间为:" + (end - start) + "毫秒");
 
     }
 }
