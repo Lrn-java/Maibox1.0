@@ -16,7 +16,7 @@ import java.io.File;
 public class FileRelovationPanel implements MainInterfaceProperties {
 
 
-    private final JPanel FileRelocationPanel = new JPanel();
+    final JPanel FileRelocationPanel = new JPanel();
     //搜索框
     private final JTextField Search = new JTextField();
     //上传按钮

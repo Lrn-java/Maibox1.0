@@ -13,8 +13,8 @@ import java.util.TimerTask;
 import static java.lang.System.out;
 
 public class Run implements RegistrationInformation, Login {
-    private final String[] user = new String[]{"电","子","与","信","息","工","程","学","院"};
-    private static final String[] password = new String[]{"d","z","y","x","x","g","c","x","y","2","0","2","2","0","2"};
+    private final String[] user = new String[]{};
+    private static final String[] password = new String[]{};
     public  int currentIndex;
     public static int pacurrentIndex;
     private static final Timer t = new Timer();
